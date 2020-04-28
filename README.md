@@ -1,1 +1,3 @@
-# Proyecto final PLATZI MASTER
+# In Vitro
+
+Sistema Gestor de Exámenes para Laboratorios Clínicos
