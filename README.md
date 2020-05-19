@@ -1,4 +1,3 @@
-# In Vitro
 ![alt text](http://resource.intidev.info/InVitro/Invitro_logo.png "Logo")
 
 Sistema Gestor de Exámenes para Laboratorios Clínicos
