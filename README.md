@@ -88,6 +88,16 @@ ___
 
 ## Design system
 
+### Type system
+Se trabajará con la misma guia  que sugiere [Material Design](https://material.io/design/typography/the-type-system.html#type-scale).
+
+![Type system](http://resource.intidev.info/InVitro/Type%20system.png "Type system")
+
+
 ### Color palette
 ___
 ![Color palette](http://resource.intidev.info/InVitro/Color%20palette.jpg "PColor palette")
+
+### Icons
+
+Los iconos se trabajará con [Font Awesome](https://fontawesome.com).
