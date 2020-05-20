@@ -86,5 +86,8 @@ ___
 ___
 ![Patient view exams mobile](http://resource.intidev.info/InVitro/Frames/Paciente_examenes_mobile.jpg "Patient view exams mobile")
 
+## Design system
 
-
+### Color palette
+___
+![Color palette](http://resource.intidev.info/InVitro/Color%20palette.jpg "PColor palette")
