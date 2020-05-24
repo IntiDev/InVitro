@@ -7,12 +7,12 @@ const ExamsModal = props => {
   const { exams } = props;
 
   return (
-    <div className="modal">
-      <span className="material-icons">clear</span>
-      <h1 className="modal__title"> Selecciona un Examen </h1>
+    <div className="examsModal">
+      <span className="material-icons examsModal__closeIcon">clear</span>
+      <h1 className="examsModal__title"> Selecciona un Examen </h1>
 
-      <form className="modal__form" action="">
-        <div className="modal__formItem">
+      <form className="examsModal__form" action="">
+        <div className="examsModal__formItem">
           <label htmlFor="exams"> Nombre del Examen </label>
           <select id="exams" name="exams">
             {exams.map(item => (
@@ -23,7 +23,7 @@ const ExamsModal = props => {
           </select>
         </div>
 
-        <div className="modal__formItem">
+        <div className="examsModal__formItem">
           <label htmlFor="instructions"> Indicaciones </label>
           <textarea
             name="instructions"
@@ -36,7 +36,7 @@ const ExamsModal = props => {
           </textarea>
         </div>
 
-        <div className="modal__formItem">
+        <div className="examsModal__formItem">
           <label htmlFor="notes"> Notas </label>
           <textarea name="notes" id="notes" rows="4" maxLength="200">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum qui
@@ -44,7 +44,7 @@ const ExamsModal = props => {
           </textarea>
         </div>
 
-        <input className="modal__formSubmit" type="submit" />
+        <input className="examsModal__formSubmit" type="submit" />
       </form>
     </div>
   );
