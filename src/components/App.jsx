@@ -1,11 +1,16 @@
 import React from 'react';
-import Button from './Button';
+import Header from './Header';
+import Footer from './Footer';
 
 const App = () => {
   return (
     <div>
-      <Button text="Enviar" />
-      <Button text="Enviar" disabled />
+      <Header user="Administrador" userName="Fulanito González" />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae placeat
+      fuga, velit, numquam, praesentium consequuntur quos magnam non aliquam rem
+      quisquam enim aliquid autem corrupti porro ipsam exercitationem pariatur
+      tenetur!
+      <Footer clinicalName="In Vitro" />
     </div>
   );
 };
