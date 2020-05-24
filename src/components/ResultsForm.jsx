@@ -8,8 +8,7 @@ const RegisterForm = props => {
       <div className="resultsCard__userInfo">
         <h1>{user}</h1>
         <h2>
-          {typeId} 
-          {' '}
+          {typeId}
           {id}
         </h2>
         <h2>{exam}</h2>
