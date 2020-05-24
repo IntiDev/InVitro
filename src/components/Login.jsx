@@ -1,8 +1,10 @@
 import React from 'react';
+import Button from './Button';
 import '../styles/components/Login.styl';
 
 const Login = props => {
   const { title } = props;
+
   return (
     <div className="Login">
       <p className="Login__title"> 
@@ -16,13 +18,7 @@ const Login = props => {
         placeholder="usuario@correo.com"
       />
       <input type="password" className="Login__input" placeholder="********" />
-      <button type="button" className="Login__button">
-        {' '}
-        LOGIN
-        {' '}
-      </button>
-      {' '}
-      {/* This element will be replaced by the button component */}
+      <Button text="Login" />
     </div>
   );
 };
