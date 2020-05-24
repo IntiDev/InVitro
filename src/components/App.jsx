@@ -1,6 +1,12 @@
 import React from 'react';
-import '../styles/components/App.styl';
+import Header from './Header';
 
-const App = () => <h1>Hello React!</h1>;
+const App = () => {
+  return (
+    <div>
+      <Header user="Administrador" userName="Fulanito González" />
+    </div>
+  );
+};
 
 export default App;
