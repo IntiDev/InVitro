@@ -1,6 +1,8 @@
 import React from 'react';
-import '../styles/components/App.styl';
+import Login from './Login';
 
-const App = () => <h1>Hello React!</h1>;
+const App = () => {
+  return <Login title="Bienvenido" />;
+};
 
 export default App;

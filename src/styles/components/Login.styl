@@ -1,0 +1,36 @@
+@import 'General.styl'
+
+body
+  display flex
+  justify-content center
+  align-items center
+  // flex-direction: row
+
+.Login
+  display flex
+  justify-content flex-start
+  align-items center
+  flex-direction column
+  background-color primary-color
+  border-radius 10px
+  padding 25px
+  color secondary-color
+  min-height 250px
+
+  &__title
+    text-transform uppercase
+    font-size 22px
+    letter-spacing: 0.1em
+
+  &__input
+    background-color secondary-color
+    border 0
+    border-radius 3px
+    color dark-background-text
+    height 25px
+    margin 5px 0
+    padding 5px 10px
+
+  &__button
+    margin 5px 0
+    width 100%
