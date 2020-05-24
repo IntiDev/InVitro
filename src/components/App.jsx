@@ -1,6 +1,13 @@
 import React from 'react';
-import '../styles/components/App.styl';
+import Button from './Button';
 
-const App = () => <h1>Hello React!</h1>;
+const App = () => {
+  return (
+    <div>
+      <Button text="Enviar" />
+      <Button text="Enviar" disabled />
+    </div>
+  );
+};
 
 export default App;

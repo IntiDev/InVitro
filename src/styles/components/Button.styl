@@ -1,0 +1,30 @@
+@import 'General.styl'
+
+body
+  display flex
+  justify-content center
+  align-items center
+  flex-direction: row
+
+.Button
+  background-color accent-color
+  border 0
+  border-radius 5px
+  color secondary-color
+  font-weight 600
+  padding 10px 50px
+  text-transform: uppercase
+  margin 15px
+
+  &:hover
+     background-color secondary-color
+     border 2px solid accent-color
+     color accent-color
+     box-shadow 0 4px 16px accent-color
+     transition all 0.2s ease;
+
+  &:disabled
+    background-color secondary-text-color
+    box-shadow none
+    color secondary-color
+    border 0
