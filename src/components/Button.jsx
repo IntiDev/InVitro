@@ -2,16 +2,12 @@ import React from 'react';
 import '../styles/components/Button.styl';
 
 const Button = props => {
-  const { text, disabled } = props;
-
-  const handleClick = () => {
-    // console.log('Click!');
-  };
+  const { text, disabled, onClick } = props;
 
   return (
     <button
       className="Button"
-      onClick={handleClick}
+      onClick={onClick}
       disabled={disabled}
       type="button"
     >

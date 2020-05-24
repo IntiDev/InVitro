@@ -4,6 +4,9 @@ import '../styles/components/Login.styl';
 
 const Login = props => {
   const { title } = props;
+  const clickMe = () => {
+    console.log('Click!');
+  };
 
   return (
     <div className="Login">
@@ -18,7 +21,7 @@ const Login = props => {
         placeholder="usuario@correo.com"
       />
       <input type="password" className="Login__input" placeholder="********" />
-      <Button text="Login" />
+      <Button text="Login" onClick={clickMe} />
     </div>
   );
 };
