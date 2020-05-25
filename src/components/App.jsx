@@ -1,6 +1,8 @@
 import React from 'react';
-import '../styles/components/App.styl';
+import Table from './Table';
 
-const App = () => <h1>Hello React!</h1>;
+const App = () => {
+  return <Table />;
+};
 
 export default App;
