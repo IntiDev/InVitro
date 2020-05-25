@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import ExamsModal from './ExamModal';
+import RegisterForm from './RegisterForm';
 import '../styles/components/App.styl';
 
 const App = () => {
@@ -24,11 +25,8 @@ const App = () => {
   return (
     <div>
       <Header user="Administrador" userName="Fulanito González" />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae placeat
-      fuga, velit, numquam, praesentium consequuntur quos magnam non aliquam rem
-      quisquam enim aliquid autem corrupti porro ipsam exercitationem pariatur
-      tenetur!
       <ExamsModal exams={info.exams} />
+      <RegisterForm user="medico" />
       <Footer clinicalName="In Vitro" />
     </div>
   );
