@@ -16,9 +16,7 @@ const Header = props => {
       </h2>
       <div className="Header__userInformation">
         <p>
-          Bienvenido 
-          {' '}
-          <br />
+          Bienvenido <br />
           {userName}
         </p>
         <span

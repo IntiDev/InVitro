@@ -10,11 +10,7 @@ const Login = props => {
 
   return (
     <div className="Login">
-      <p className="Login__title"> 
-        {' '}
-        {title}
-        {' '}
-      </p>
+      <p className="Login__title">{title}</p>
       <input
         type="email"
         className="Login__input"
