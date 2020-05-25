@@ -28,7 +28,7 @@ const App = () => {
       <Header user="Administrador" userName="Fulanito González" />
       <ExamsModal exams={info.exams} />
       <RegisterForm user="medico" />
-       <Login title="Bienvenido" />
+      <Login title="Bienvenido" />
       <Footer clinicalName="In Vitro" />
     </>
   );

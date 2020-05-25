@@ -1,0 +1,40 @@
+@import 'General.styl'
+
+body
+  display flex
+  justify-content center
+  align-items center
+  flex-direction: row
+
+.Table
+  font-size 16px
+  overflow: hidden
+  border-spacing 0
+  border-collapse collapse
+  color dark-background-text
+
+  &__header
+    background-color primary-color
+    color secondary-color
+    box-shadow 0 3px 3px divider-color
+
+    > th
+      font-weight 400
+      padding 15px 20px
+
+  &__cell
+    border-bottom 2px solid divider-color
+    font-size 14px
+    padding 15px 20px
+
+  &__actions
+    text-align center
+    border-bottom 2px solid divider-color
+
+  &__actionButton
+    color dark-primary-color
+    padding 0 5px
+
+.material-icons:hover
+  color accent-color
+  cursor pointer
