@@ -9,7 +9,7 @@ const Footer = props => {
       Copyright
       {clinicalName}
     </div>
-);
+  );
 };
 
 export default Footer;
