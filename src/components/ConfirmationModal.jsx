@@ -9,12 +9,7 @@ const ConfirmationModal = props => {
       <span className="material-icons confirmationModal__warningIcon">
         error_outline
       </span>
-      <p>
-        ¿Esta seguro que desea deshabilitar al usuario
-        {name}
-        {' '}
-        ?
-      </p>
+      <p>¿Esta seguro que desea deshabilitar al usuario {name} ?</p>
       <div className="confirmationModal__btn">
         <button className="confirmationModal__btn--warning" type="button">
           Borrar

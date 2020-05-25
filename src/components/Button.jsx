@@ -11,9 +11,7 @@ const Button = props => {
       disabled={disabled}
       type="button"
     >
-      {' '}
       {text}
-      {' '}
     </button>
   );
 };

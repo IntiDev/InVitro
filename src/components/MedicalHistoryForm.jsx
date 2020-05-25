@@ -8,9 +8,7 @@ const MedicalHistoryForm = props => {
     <div className="medicalHistoryForm">
       <div className="medicalHistoryForm__title">
         <h1>
-          {name} 
-          {' '}
-          {lastname}
+          {name} {lastname}
         </h1>
       </div>
       <form className="medicalHistoryForm__form" action="">

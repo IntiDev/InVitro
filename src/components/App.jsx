@@ -7,7 +7,7 @@ import Login from './Login';
 import '../styles/components/App.styl';
 
 const App = () => {
-   const info = {
+  const info = {
     exams: [
       {
         id: 1,
