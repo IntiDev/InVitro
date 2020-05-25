@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import ExamsModal from './ExamModal';
 import RegisterForm from './RegisterForm';
+import Login from './Login';
 import '../styles/components/App.styl';
 
 const App = () => {
@@ -23,12 +24,13 @@ const App = () => {
     ],
   };
   return (
-    <div>
+    <>
       <Header user="Administrador" userName="Fulanito González" />
       <ExamsModal exams={info.exams} />
       <RegisterForm user="medico" />
+       <Login title="Bienvenido" />
       <Footer clinicalName="In Vitro" />
-    </div>
+    </>
   );
 };
 
