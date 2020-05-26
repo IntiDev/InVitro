@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from './Button';
 import '../styles/components/RegisterForm.styl';
 
 const RegisterForm = props => {
-  const { user } = props;
+  const { user, isNew } = props;
 
   return (
     <div className="registerCard">
@@ -46,7 +47,7 @@ const RegisterForm = props => {
           <input type="mail" name="mail" id="mail" />
         </label>
 
-        <input type="submit" className="registerCard__submitButtom" />
+        {isNew ? <Button text="Crear" /> : <Button text="Actualizar" />}
       </form>
     </div>
   );
