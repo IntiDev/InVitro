@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/components/ResultsForm.styl';
 
-const RegisterForm = props => {
+const ResultsForm = props => {
   const { user, id, exam, typeId, examResult } = props;
   return (
     <div className="resultsCard">
@@ -29,4 +29,4 @@ const RegisterForm = props => {
   );
 };
 
-export default RegisterForm;
+export default ResultsForm;
