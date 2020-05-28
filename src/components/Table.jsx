@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import UpdateForm from './UpdateForm';
+import ConfirmationModal from './ConfirmationModal';
 import '../styles/components/Table.styl';
 
-const Table = () => {
+const Table = ({ users }) => {
   const data = {
     tableViewData: ['Cedula', 'Nombre', 'Celular', 'Correo', 'Estado'],
-    userInformation: [
-      {
-        cedulaId: '12345678',
-        name: 'Fulanito González',
-        phone: '0123456789',
-        email: 'user@dominio.com',
-        state: 'Activo',
-      },
-      {
-        cedulaId: '87654321',
-        name: 'Susana Hernández',
-        phone: '9876543210',
-        email: 'user@dominio.com',
-        state: 'Inactivo',
-      },
-    ],
+    userInformation: users,
+  };
+  const [modal, setModal] = useState({
+    editModal: 'false',
+    warningModal: 'false',
+  });
+
+  const handleOpenModal = item => {
+    if (item === 'editModal') setModal({ ...modal, editModal: 'true' });
+    else setModal({ ...modal, warningModal: 'true' });
+  };
+
+  const handleCloseModal = () => {
+    setModal({ editModal: 'false', warningModal: 'false' });
   };
 
   return (
@@ -41,8 +41,30 @@ const Table = () => {
             <td className="Table__cell">{item.email}</td>
             <td className="Table__cell">{item.state}</td>
             <td className="Table__actions">
-              <span className="Table__actionButton material-icons">edit</span>
-              <span className="Table__actionButton material-icons">delete</span>
+              <button
+                type="button"
+                onClick={() => handleOpenModal('editModal')}
+                className="Table__actionButton material-icons"
+              >
+                edit
+              </button>
+              <UpdateForm
+                item={item}
+                isOpen={modal.editModal}
+                onCloseModal={handleCloseModal}
+              />
+              <button
+                type="button"
+                onClick={() => handleOpenModal('warningModal')}
+                className="Table__actionButton material-icons"
+              >
+                delete
+              </button>
+              <ConfirmationModal
+                name={item.name}
+                isOpen={modal.warningModal}
+                onCloseModal={handleCloseModal}
+              />
             </td>
           </tr>
         ))}

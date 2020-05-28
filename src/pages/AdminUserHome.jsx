@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import SideMenu from '../components/SideMenu';
 import Table from '../components/Table';
 import '../styles/pages/AdminUserHome.styl';
 import Button from '../components/Button';
 
-const AdminUserHome = () => {
+const AdminUserHome = ({ users }) => {
   return (
     <div className="userHome__container">
       <SideMenu />
@@ -15,14 +17,22 @@ const AdminUserHome = () => {
             <input type="text" placeholder="Filter" />
           </div>
           <div>
-            <Button text="Nuevo Usuario" />
+            <Link to="/register">
+              <Button text="Nuevo Usuario" />
+            </Link>
             <Button text="Cargar CSV " />
           </div>
         </div>
-        <Table />
+        <Table users={users} />
       </div>
     </div>
   );
 };
 
-export default AdminUserHome;
+const mapStateToProps = state => {
+  return {
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps, null)(AdminUserHome);
