@@ -6,7 +6,7 @@ import Table from '../components/Table';
 import '../styles/pages/AdminUserHome.styl';
 import Button from '../components/Button';
 
-const AdminUserHome = ({ users }) => {
+const AdminUserHome = ({ users, history }) => {
   return (
     <div className="userHome__container">
       <SideMenu />
@@ -23,7 +23,7 @@ const AdminUserHome = ({ users }) => {
             <Button text="Cargar CSV " />
           </div>
         </div>
-        <Table users={users} />
+        <Table users={users} history={history} />
       </div>
     </div>
   );

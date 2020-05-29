@@ -5,7 +5,6 @@ import RegisterForm from '../components/RegisterForm';
 import '../styles/pages/Register.styl';
 
 const Register = props => {
-  const { id } = props.match.params;
   return (
     <div className="registerContainer">
       <Link to="/adminUser">
@@ -15,7 +14,7 @@ const Register = props => {
         </div>
       </Link>
       <div className="registerContainer__form">
-        {id ? <RegisterForm /> : <RegisterForm isNew="true" />}
+        <RegisterForm history={props.history} />
       </div>
     </div>
   );

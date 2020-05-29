@@ -1,4 +1,6 @@
 import React from 'react';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -8,7 +10,7 @@ import App from './routes/App';
 const initialState = {
   users: [
     {
-      idUser: '1233690048',
+      idUser: '1',
       cedulaId: '19142879',
       name: 'Fulanito Gonzalez',
       email: 'fulanito@fulanito.com',
@@ -21,7 +23,7 @@ const initialState = {
       },
     },
     {
-      idUser: '1233690048',
+      idUser: '2',
       cedulaId: '5654610',
       name: 'Pepe Perez',
       email: 'pepe@perez.com',
@@ -34,7 +36,7 @@ const initialState = {
       },
     },
     {
-      idUser: '1233690048',
+      idUser: '3',
       cedulaId: '19142879',
       name: 'Fulanito Gonzalez',
       email: 'fulanito@fulanito.com',
@@ -50,10 +52,13 @@ const initialState = {
 };
 
 const store = createStore(reducer, initialState);
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );
