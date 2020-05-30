@@ -15,10 +15,12 @@ const UpdateForm = props => {
     email: item.email,
     phone: item.phone,
     state: item.state,
+    rol: item.rol,
   });
 
   const handleUpdateUser = () => {
     props.updateUser(user);
+    console.log(user);
     onCloseModal();
   };
 

@@ -16,11 +16,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: {
-        idRol: 'ABC1235POI',
-        'nameRol/typeRol': 'ADMIN',
-        status: 'Activate/Inactive',
-      },
+      rol: 'Administrador',
     },
     {
       idUser: '2',
@@ -29,11 +25,7 @@ const initialState = {
       email: 'pepe@perez.com',
       phone: '2706020',
       state: 'Desactive',
-      rol: {
-        idRol: 'ABC1235POI',
-        'nameRol/typeRol': 'ADMIN',
-        status: 'Activate/Inactive',
-      },
+      rol: 'Pacientes',
     },
     {
       idUser: '3',
@@ -42,11 +34,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: {
-        idRol: 'ABC1235POI',
-        'nameRol/typeRol': 'ADMIN',
-        status: 'Activate/Inactive',
-      },
+      rol: 'Medicos',
     },
   ],
 };

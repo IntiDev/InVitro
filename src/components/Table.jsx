@@ -2,7 +2,7 @@ import React from 'react';
 import OpenModal from './OpenModal';
 import '../styles/components/Table.styl';
 
-const Table = ({ users }) => {
+const Table = ({ users, history }) => {
   const data = {
     tableViewData: ['Cedula', 'Nombre', 'Celular', 'Correo', 'Estado'],
     userInformation: users,
@@ -27,7 +27,7 @@ const Table = ({ users }) => {
             <td className="Table__cell">{item.email}</td>
             <td className="Table__cell">{item.state}</td>
             <td className="Table__actions">
-              <OpenModal type="edit" item={item} />
+              <OpenModal type="edit" item={item} history={history} />
               <OpenModal type="delete" item={item} />
             </td>
           </tr>
