@@ -1,4 +1,6 @@
 import React from 'react';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -8,52 +10,43 @@ import App from './routes/App';
 const initialState = {
   users: [
     {
-      idUser: '1233690048',
+      idUser: '1',
       cedulaId: '19142879',
       name: 'Fulanito Gonzalez',
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: {
-        idRol: 'ABC1235POI',
-        'nameRol/typeRol': 'ADMIN',
-        status: 'Activate/Inactive',
-      },
+      rol: 'Administrador',
     },
     {
-      idUser: '1233690048',
+      idUser: '2',
       cedulaId: '5654610',
       name: 'Pepe Perez',
       email: 'pepe@perez.com',
       phone: '2706020',
       state: 'Desactive',
-      rol: {
-        idRol: 'ABC1235POI',
-        'nameRol/typeRol': 'ADMIN',
-        status: 'Activate/Inactive',
-      },
+      rol: 'Pacientes',
     },
     {
-      idUser: '1233690048',
+      idUser: '3',
       cedulaId: '19142879',
       name: 'Fulanito Gonzalez',
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: {
-        idRol: 'ABC1235POI',
-        'nameRol/typeRol': 'ADMIN',
-        status: 'Activate/Inactive',
-      },
+      rol: 'Medicos',
     },
   ],
 };
 
 const store = createStore(reducer, initialState);
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

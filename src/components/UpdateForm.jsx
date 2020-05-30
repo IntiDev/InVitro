@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { updateUser } from '../actions';
 import Button from './Button';
 import Modal from './Modal';
 import '../styles/components/RegisterForm.styl';
 
-const UpdateForm = ({ item, isOpen, onCloseModal }) => {
+const UpdateForm = props => {
+  const { item, isOpen, onCloseModal } = props;
+
+  const [user, setUser] = useState({
+    idUser: item.idUser,
+    cedulaId: item.cedulaId,
+    name: item.name,
+    email: item.email,
+    phone: item.phone,
+    state: item.state,
+    rol: item.rol,
+  });
+
+  const handleUpdateUser = () => {
+    props.updateUser(user);
+    console.log(user);
+    onCloseModal();
+  };
+
+  const handleChange = e => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <Modal isOpen={isOpen} onCloseModal={onCloseModal}>
       <div className="registerCard">
@@ -13,24 +40,32 @@ const UpdateForm = ({ item, isOpen, onCloseModal }) => {
             Documento
             <input
               type="text"
-              name="document"
-              id="document"
+              name="cedulaId"
+              id="cedulaId"
               defaultValue={item.cedulaId}
+              onChange={handleChange}
             />
           </label>
 
           <label htmlFor="name">
             Nombre
-            <input type="text" name="name" id="name" defaultValue={item.name} />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              defaultValue={item.name}
+              onChange={handleChange}
+            />
           </label>
 
           <label htmlFor="celphone">
             Celular
             <input
               type="text"
-              name="celphone"
-              id="celphone"
+              name="phone"
+              id="phone"
               defaultValue={item.phone}
+              onChange={handleChange}
             />
           </label>
 
@@ -38,17 +73,22 @@ const UpdateForm = ({ item, isOpen, onCloseModal }) => {
             Correo
             <input
               type="mail"
-              name="mail"
-              id="mail"
+              name="email"
+              id="email"
               defaultValue={item.email}
+              onChange={handleChange}
             />
           </label>
 
-          <Button text="Actualizar" />
+          <Button text="Actualizar" onClick={handleUpdateUser} />
         </form>
       </div>
     </Modal>
   );
 };
 
-export default UpdateForm;
+const mapDispatchToProps = {
+  updateUser,
+};
+
+export default connect(null, mapDispatchToProps)(UpdateForm);
