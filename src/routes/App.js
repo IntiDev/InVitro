@@ -7,13 +7,13 @@ import Login from '../pages/Login';
 
 const App = () => (
   <BrowserRouter>
-    <Layout>
-      <Switch>
+    <Switch>
+      <Route exact path="/" component={Login} />
+      <Layout>
         <Route exact path="/adminUser" component={AdminUserHome} />
-        <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
-      </Switch>
-    </Layout>
+      </Layout>
+    </Switch>
   </BrowserRouter>
 );
 
