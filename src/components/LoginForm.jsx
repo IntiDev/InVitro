@@ -12,7 +12,7 @@ const LoginForm = props => {
 
   const [{ email, password }, setState] = useState(initialState);
 
-  const API_URL = 'API_URL_HERE';
+  const API_URL = 'https://servicios-invitro.intidev.info/public/';
 
   const clearState = () => {
     setState({ ...initialState });
@@ -25,7 +25,7 @@ const LoginForm = props => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      return response;
+      return response.json();
     } catch (e) {
       return e;
     }
@@ -37,10 +37,13 @@ const LoginForm = props => {
   };
 
   const handleClick = () => {
-    sendUserInformation(`${API_URL}/login`, 'POST', { email, password })
+    sendUserInformation(`${API_URL}login`, 'POST', {
+      usuario: email,
+      contrasenia: password,
+    })
       .then(() => {
+        // console.log(response);
         clearState();
-        // console.log('Usuario válido'); // Manda a vista correspondiente
       })
       .catch(() => {
         // console.error('Error');
