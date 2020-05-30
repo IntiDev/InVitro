@@ -4,16 +4,20 @@ import Layout from '../components/Layout';
 import Register from '../pages/RegisterAndUpdate';
 import AdminUserHome from '../pages/AdminUserHome';
 import Login from '../pages/Login';
+import MedicalSearchView from '../pages/MedicalSearchView';
+import MedicalViewUSerInfo from '../pages/MedicalViewUserInfo';
 
 const App = () => (
   <BrowserRouter>
-    <Layout>
-      <Switch>
+    <Switch>
+      <Route exact path="/" component={Login} />
+      <Layout>
         <Route exact path="/adminUser" component={AdminUserHome} />
-        <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
-      </Switch>
-    </Layout>
+        <Route exact path="/medical" component={MedicalSearchView} />
+        <Route exact path="/medicalUserInfo" component={MedicalViewUSerInfo} />
+      </Layout>
+    </Switch>
   </BrowserRouter>
 );
 
