@@ -7,17 +7,17 @@ import '../styles/pages/AdminUserHome.styl';
 import Button from '../components/Button';
 
 const AdminUserHome = ({ users, history }) => {
-  const [filterBy, setFilter] = useState('Todos');
+  const [filterBy, setFilter] = useState('Usuarios');
 
   const filteredUsers = useFilter => {
     if (
       useFilter === 'Medicos' ||
       useFilter === 'Pacientes' ||
-      useFilter === 'Administrador'
+      useFilter === 'Administradores'
     ) {
       return users.filter(user => user.rol === useFilter);
     }
-    if (useFilter === 'Todos') {
+    if (useFilter === 'Usuarios') {
       return users;
     }
     return users.filter(user =>
@@ -34,17 +34,17 @@ const AdminUserHome = ({ users, history }) => {
   };
 
   return (
-    <div className="userHome__container">
+    <div className="userHome">
       <SideMenu useFilter={filterSelected} />
       <div className="userHome__table">
         <div className="userHome__tableActions">
           <div className="userHome__tableActions__filter">
-            <h2> Titulo Tabla</h2>
+            <h2> {filterBy}</h2>
             <input type="text" placeholder="Filter" onChange={handleChange} />
           </div>
           <div>
             <Link to="/register">
-              <Button text="Nuevo Usuario" />
+              <Button className="button" text="Nuevo Usuario" />
             </Link>
             <Button text="Cargar CSV " />
           </div>
