@@ -49,20 +49,20 @@ const MedicalHistoryForm = props => {
       </form>
       <div className="medicalHistoryForm__previousVisit">
         <div className="medicalHistoryForm__previousVisits__title">
-          <h1>Historia clinica</h1>
+          <h2>Historia clinica</h2>
           <div>
             <a href="/">Agregar</a>
-            <a href="/">Ver mas +</a>
+            <a href="/">Ver más +</a>
           </div>
         </div>
         <div className="medicalHistoryForm__previousVisits_description">
           <MedicalHistoryItem
-            date="17/12/1988"
+            date="17/12/2019"
             description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque magnam modi deleniti commodi dolores. Aspernatur eaque itaque repudiandae dignissimos voluptatum harum placeat, commodi"
           />
         </div>
       </div>
-      <button className="medicalHistoryForm__submitBtn" type="submit">
+      <button className="medicalHistoryForm__submitBtn Button" type="submit">
         Actualizar Datos
       </button>
     </div>
