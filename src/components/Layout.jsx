@@ -5,7 +5,7 @@ import '../styles/components/Layout.styl';
 
 const Layout = ({ children }) => (
   <div className="App">
-    <Header />
+    <Header className="Prueba" />
     {children}
     <img
       className="background"
