@@ -1,56 +1,126 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addUser } from '../actions';
 import Button from './Button';
 import '../styles/components/RegisterForm.styl';
 
 const RegisterForm = props => {
-  const { user, isNew } = props;
+  const [user, setUser] = useState({
+    documentType: '',
+    cedulaId: '',
+    name: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    cellphone: '',
+    state: 'Active',
+  });
+
+  const handleAddUser = () => {
+    props.addUser(user);
+    props.history.push('/adminUser');
+  };
+
+  const handleChange = e => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <div className="registerCard">
-      <h1 className="registerCard__title">
-        Datos del
-        {user}
-      </h1>
+      <span
+        className="registerCard__title__icon material-icons "
+        style={{ fontSize: 60 }}
+      >
+        account_circle
+      </span>
+      <h1 className="registerCard__title">Datos del usuario</h1>
       <form className="registerCard__form" action="">
-        <label htmlFor="typeID">
-          Tipo de Documento
-          <input type="text" name="typeID" id="typeID" />
-        </label>
+        <div className="registerCard__form__section">
+          <label htmlFor="documentType">
+            Tipo de Documento
+            <input
+              type="text"
+              name="documentType"
+              id="name"
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="document">
-          Documento
-          <input type="text" name="document" id="document" />
-        </label>
+          <label htmlFor="cedulaId">
+            Documento
+            <input
+              type="text"
+              name="cedulaId"
+              id="cedulaId"
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="name">
-          Nombre
-          <input type="text" name="name" id="name" />
-        </label>
+          <label htmlFor="name">
+            Nombre
+            <input type="text" name="name" id="name" onChange={handleChange} />
+          </label>
 
-        <label htmlFor="lastname">
-          Apellido
-          <input type="text" name="lastname" id="lastname" />
-        </label>
+          <label htmlFor="lastname">
+            Apellido
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="celphone">
-          Celular
-          <input type="text" name="celphone" id="celphone" />
-        </label>
+          <label htmlFor="cellphone">
+            Celular
+            <input
+              type="text"
+              name="cellphone"
+              id="cellphone"
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="phoneNumber">
-          Tlf Fijo
-          <input type="text" name="phoneNumber" id="phoneNumber" />
-        </label>
+          <label htmlFor="phone">
+            Tlf Fijo
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
 
-        <label htmlFor="mail">
+        <label htmlFor="email">
           Correo
-          <input type="mail" name="mail" id="mail" />
+          <input type="mail" name="email" id="email" onChange={handleChange} />
         </label>
 
-        {isNew ? <Button text="Crear" /> : <Button text="Actualizar" />}
+        <label htmlFor="role">
+          {' '}
+          Tipo de Usuario
+          <select id="role" name="role">
+            <option value="Paciente">Paciente</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Admin">Admin</option>
+            <option value="Bacteriologo">Bacteriologo</option>
+          </select>
+        </label>
+
+        <div>
+          <Button onClick={handleAddUser} text="Crear" />
+        </div>
       </form>
     </div>
   );
 };
 
-export default RegisterForm;
+const mapDispatchToProps = {
+  addUser,
+};
+
+export default connect(null, mapDispatchToProps)(RegisterForm);

@@ -1,21 +1,32 @@
 @import 'General.styl'
 
+.container
+  max-height: 65vh
+  overflow-y: scroll
+
 .Table
   width: 100%
   font-size 16px
-  overflow: hidden
   border-spacing 0
   border-collapse collapse
   color dark-background-text
-
-  &__header
-    background-color primary-color
+  position: relative
+   
+  th
+    text-align: start
+    font-weight 400
+    padding 15px 20px
+    position: sticky;
+    top: 0
     color secondary-color
+    background-color primary-color
     box-shadow 0 3px 3px divider-color
 
-    > th
-      font-weight 400
-      padding 15px 20px
+  &__row:hover
+      background-color: lightgray
+
+  &__desactiveRow
+    background-color: #e6e4e4
 
   &__cell
     border-bottom 2px solid divider-color
@@ -33,3 +44,4 @@
 .material-icons:hover
   color accent-color
   cursor pointer
+
