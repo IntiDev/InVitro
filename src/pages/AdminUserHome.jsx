@@ -46,7 +46,9 @@ const AdminUserHome = ({ users, history }) => {
             <Link to="/register">
               <Button className="button" text="Nuevo Usuario" />
             </Link>
-            <Button text="Cargar CSV " />
+            <Link to="/adminUser">
+              <Button text="Cargar CSV " disabled />
+            </Link>
           </div>
         </div>
         <Table users={filteredUsers(filterBy)} history={history} />
