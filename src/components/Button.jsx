@@ -6,9 +6,10 @@ const Button = props => {
 
   return (
     <button
-      className={`Button ${warningBtn ? 'warningBtn' : ''} ${
-        cancelBtn ? 'cancelBtn' : ''
-      } `}
+      className={`Button
+          ${warningBtn ? 'warningBtn' : ''}
+          ${cancelBtn ? 'cancelBtn' : ''} 
+        `}
       onClick={onClick}
       disabled={disabled}
       type="button"

@@ -13,6 +13,7 @@
   position: relative
    
   th
+    text-align: start
     font-weight 400
     padding 15px 20px
     position: sticky;
@@ -20,9 +21,12 @@
     color secondary-color
     background-color primary-color
     box-shadow 0 3px 3px divider-color
-  
+
   &__row:hover
       background-color: lightgray
+
+  &__desactiveRow
+    background-color: #e6e4e4
 
   &__cell
     border-bottom 2px solid divider-color
@@ -40,3 +44,4 @@
 .material-icons:hover
   color accent-color
   cursor pointer
+

@@ -18,7 +18,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Administrador',
+      role: 'Administrador',
     },
     {
       idUser: '2',
@@ -29,7 +29,7 @@ const initialState = {
       email: 'pepe@perez.com',
       phone: '2706020',
       state: 'Desactive',
-      rol: 'Pacientes',
+      role: 'Pacientes',
     },
     {
       idUser: '3',
@@ -40,7 +40,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Medicos',
+      role: 'Medicos',
     },
     {
       idUser: '4',
@@ -51,7 +51,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Administrador',
+      role: 'Administrador',
     },
     {
       idUser: '5',
@@ -62,7 +62,7 @@ const initialState = {
       email: 'pepe@perez.com',
       phone: '2706020',
       state: 'Desactive',
-      rol: 'Pacientes',
+      role: 'Pacientes',
     },
     {
       idUser: '6',
@@ -73,7 +73,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Medicos',
+      role: 'Medicos',
     },
     {
       idUser: '7',
@@ -84,7 +84,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Administrador',
+      role: 'Administrador',
     },
     {
       idUser: '8',
@@ -95,7 +95,7 @@ const initialState = {
       email: 'pepe@perez.com',
       phone: '2706020',
       state: 'Desactive',
-      rol: 'Pacientes',
+      role: 'Pacientes',
     },
     {
       idUser: '9',
@@ -106,7 +106,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Medicos',
+      role: 'Medicos',
     },
     {
       idUser: '10',
@@ -117,7 +117,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Administrador',
+      role: 'Administrador',
     },
     {
       idUser: '11',
@@ -128,7 +128,7 @@ const initialState = {
       email: 'pepe@perez.com',
       phone: '2706020',
       state: 'Desactive',
-      rol: 'Pacientes',
+      role: 'Pacientes',
     },
     {
       idUser: '12',
@@ -139,7 +139,7 @@ const initialState = {
       email: 'fulanito@fulanito.com',
       phone: '2706020',
       state: 'Active',
-      rol: 'Medicos',
+      role: 'Medicos',
     },
   ],
 };

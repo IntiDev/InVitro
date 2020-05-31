@@ -15,7 +15,7 @@ const UpdateForm = props => {
     email: item.email,
     phone: item.phone,
     state: item.state,
-    rol: item.rol,
+    role: item.role,
   });
 
   const handleUpdateUser = () => {
@@ -36,48 +36,93 @@ const UpdateForm = props => {
       <div className="registerCard">
         <h1 className="registerCard__title">Modificar Informacion</h1>
         <form className="registerCard__form" action="">
-          <label htmlFor="document">
-            Documento
-            <input
-              type="text"
-              name="cedulaId"
-              id="cedulaId"
-              defaultValue={item.cedulaId}
-              onChange={handleChange}
-            />
-          </label>
+          <div className="registerCard__form__section">
+            <label htmlFor="documentType">
+              Tipo de Documento
+              <input
+                type="text"
+                name="documentType"
+                id="name"
+                onChange={handleChange}
+                defaultValue={item.documentType}
+              />
+            </label>
 
-          <label htmlFor="name">
-            Nombre
-            <input
-              type="text"
-              name="name"
-              id="name"
-              defaultValue={item.name}
-              onChange={handleChange}
-            />
-          </label>
+            <label htmlFor="cedulaId">
+              Documento
+              <input
+                type="text"
+                name="cedulaId"
+                id="cedulaId"
+                onChange={handleChange}
+                defaultValue={item.cedulaId}
+              />
+            </label>
 
-          <label htmlFor="celphone">
-            Celular
-            <input
-              type="text"
-              name="phone"
-              id="phone"
-              defaultValue={item.phone}
-              onChange={handleChange}
-            />
-          </label>
+            <label htmlFor="name">
+              Nombre
+              <input
+                type="text"
+                name="name"
+                id="name"
+                onChange={handleChange}
+                defaultValue={item.name}
+              />
+            </label>
 
-          <label htmlFor="mail">
+            <label htmlFor="lastname">
+              Apellido
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                onChange={handleChange}
+                defaultValue={item.lastname}
+              />
+            </label>
+
+            <label htmlFor="cellphone">
+              Celular
+              <input
+                type="text"
+                name="cellphone"
+                id="cellphone"
+                onChange={handleChange}
+                defaultValue={item.cellphone}
+              />
+            </label>
+
+            <label htmlFor="phone">
+              Tlf Fijo
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                onChange={handleChange}
+                defaultValue={item.phone}
+              />
+            </label>
+          </div>
+
+          <label htmlFor="email">
             Correo
             <input
               type="mail"
               name="email"
               id="email"
-              defaultValue={item.email}
               onChange={handleChange}
+              defaultValue={item.email}
             />
+          </label>
+
+          <label htmlFor="role">
+            Tipo de Usuario
+            <select id="role" name="role" defaultValue={item.role}>
+              <option value="Paciente">Paciente</option>
+              <option value="Doctor">Doctor</option>
+              <option value="Admin">Admin</option>
+              <option value="Bacteriologo">Bacteriologo</option>
+            </select>
           </label>
 
           <Button text="Actualizar" onClick={handleUpdateUser} />
