@@ -1,1 +1,69 @@
 @import '../components/General.styl';
+
+.Info
+  &__aside
+    color dark-primary-color
+    display inline-flex
+    flex-direction: column
+    margin 0 25px
+    width 20%
+
+  &__buttonAction
+    display inline-flex
+    justify-content space-between
+    width 100%
+    :first-child {
+      font-size 20px
+    }
+
+  &__buttonAction > *
+    text-align center
+    padding 5px 10px
+    width 5%
+    margin 25px
+
+  &__asideTitle
+    font-weight 400
+    margin-top 0
+    margin-bottom 0
+
+  &__asideOption
+    display inline-flex
+    justify-content center
+    align-items center
+    flex-direction row
+    align-content center
+    > *
+      padding 0 10px
+
+  &__asideOption:hover
+    color accent-color
+    cursor pointer
+
+  &__mainContainer
+    color dark-background-text
+    margin-bottom 25px
+
+    display inline-flex
+    flex-direction column
+    // justify-content: center
+    align-items center
+    background-color white
+    border-radius 5px
+    width 50%
+    margin-left 5%
+
+  &__userIcon
+    color dark-primary-color
+    padding-top 25px
+
+.active
+  color accent-color
+
+.medicalHistoryForm
+  width 80%
+  border 0
+  padding 0
+
+.Footer
+  position relative
