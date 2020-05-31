@@ -1,7 +1,8 @@
 {
   "extends": [
     "airbnb",
-    "prettier"
+    "prettier",
+    "prettier/react" /* Test */
   ],
   "plugins": [
     "prettier"
@@ -22,7 +23,8 @@
       "error",
       "absolute-first"
     ],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    "react/jsx-one-expression-per-line": 0
   },
   "globals": {
     "window": true,
@@ -31,7 +33,8 @@
     "FormData": true,
     "FileReader": true,
     "Blob": true,
-    "navigator": true
+    "navigator": true,
+    "fetch": false
   },
   "parser": "babel-eslint"
 }
