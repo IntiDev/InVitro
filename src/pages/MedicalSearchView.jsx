@@ -46,21 +46,24 @@ const MedicalSearchView = () => {
   };
 
   return (
-    <div className="Search__container">
-      <h2> Buscar Paciente</h2>
-      <p>
-        Digite el número de identificación del paciente para cargar resultados
-      </p>
-      <div className="Search__form">
-        <input
-          type="text"
-          name="userId"
-          value={userId}
-          className="Search__input"
-          placeholder="1234456"
-          onChange={handleChange}
-        />
-        <Button text="Buscar" onClick={handleClick} />
+    <div className="cardSearchContainer">
+      <div className="Search__container">
+        <h2> Buscar Paciente</h2>
+        <p>
+          Digite el número de identificación del paciente para cargar resultados
+        </p>
+        <div className="Search__form">
+          <input
+            type="text"
+            name="userId"
+            value={userId}
+            className="Search__input"
+            placeholder="1234456"
+            onChange={handleChange}
+          />
+
+          <Button text="Buscar" onClick={handleClick} />
+        </div>
       </div>
     </div>
   );

@@ -1,40 +1,45 @@
 @import '../components/General.styl';
 
+.cardInfoContainer
+  position: relative
+  width: 90%
+  margin 0 auto
+  padding-top: 25px
+
 .Info
   &__aside
     color dark-primary-color
     display inline-flex
     flex-direction: column
     margin 0 25px
-    width 20%
+    width 25%
 
   &__buttonAction
-    display inline-flex
-    justify-content space-between
-    width 100%
+    display: flex
+    align-items: center
+    position: absolute
+    background-color: accent-color
+    color white
+    padding: 10px 15px
+    border-radius: 40px 
+    margin-left: 25px
+
     :first-child {
       font-size 20px
     }
 
-  &__buttonAction > *
-    text-align center
-    padding 5px 10px
-    width 5%
-    margin 25px
-
   &__asideTitle
     font-weight 400
-    margin-top 0
-    margin-bottom 0
+    margin-bottom 10px
 
   &__asideOption
     display inline-flex
-    justify-content center
-    align-items center
     flex-direction row
+    align-items center
     align-content center
-    > *
-      padding 0 10px
+    margin-bottom: 6px
+    > .material-icons
+      padding-right: 10px
 
   &__asideOption:hover
     color accent-color
@@ -42,16 +47,16 @@
 
   &__mainContainer
     color dark-background-text
-    margin-bottom 25px
-
     display inline-flex
     flex-direction column
     // justify-content: center
     align-items center
     background-color white
     border-radius 5px
-    width 50%
-    margin-left 5%
+    width 600px
+    padding: 40px
+    margin-bottom: 20px
+    box-shadow: 4px 13px 5px -6px #bdbdbd;
 
   &__userIcon
     color dark-primary-color

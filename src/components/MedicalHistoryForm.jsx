@@ -7,9 +7,13 @@ const MedicalHistoryForm = props => {
   return (
     <div className="medicalHistoryForm">
       <div className="medicalHistoryForm__title">
-        <h1>
-          {name} {lastname}
-        </h1>
+        <span
+          className="medicalHistoryForm__icon material-icons "
+          style={{ fontSize: 60 }}
+        >
+          account_circle
+        </span>
+        <h1>Datos del Paciente</h1>
       </div>
       <form className="medicalHistoryForm__form" action="">
         <label htmlFor="typeID">
