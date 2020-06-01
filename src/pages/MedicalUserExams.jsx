@@ -46,7 +46,7 @@ const MedicalUserExams = () => {
               </td>
             </tr>
           </table>
-          <Button text="Agregar exámen" />
+          <Button text="Agregar exámen" disabled />
         </main>
       </div>
     </>

@@ -4,6 +4,9 @@ import MedicalHistoryForm from '../components/MedicalHistoryForm';
 import '../styles/pages/MedicalViewUSerInfo.styl';
 
 const MedicalViewUSerInfo = () => {
+  // let patientData = localStorage.getItem("infoPatient");
+  // console.log(patientData);
+
   return (
     <>
       <div className="cardInfoContainer">
@@ -20,7 +23,7 @@ const MedicalViewUSerInfo = () => {
             <span>Información personal</span>
           </div>
           <Link to="/medicalUserExams">
-            <div className="Info__asideOption">
+            <div className="Info__asideOption Add">
               <span className="material-icons">note_add</span>
               <span>Solicitar exámenes</span>
             </div>

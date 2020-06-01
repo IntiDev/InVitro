@@ -34,6 +34,7 @@ const MedicalSearchView = () => {
     },
     {
       id: 2,
+      typeDoc: 'Cedula',
       cc: '11111',
       email: 'sofia@dominio.com',
       name: 'Sofia',
@@ -90,8 +91,8 @@ const MedicalSearchView = () => {
       return item.cc === userCc;
     });
     clearState();
-
     if (infoPatient) {
+      localStorage.setItem('patientInfo', infoPatient);
       // eslint-disable-next-line no-restricted-globals
       location.href = '/medicalUserInfo';
     }
