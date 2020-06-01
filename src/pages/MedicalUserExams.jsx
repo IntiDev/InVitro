@@ -3,23 +3,22 @@ import Button from '../components/Button';
 import '../styles/pages/MedicalUserExams.styl';
 
 const MedicalUserExams = () => {
-  const backButton = () => {
-    console.log('back');
-  };
-
   return (
     <>
       <div className="Container">
+        <div className="Info__buttonAction">
+          <span className="material-icons">arrow_back</span>
+          <span>Atras</span>
+        </div>
         <aside>
-          <Button text="&#x02190;" onClick={backButton} />
-          <h3 className="Info__asideTitle">Opciones</h3>
+          <h2 className="Info__asideTitle">Opciones</h2>
           <div className="Info__asideOption">
             <span className="material-icons">face</span>
-            <p>Información personal</p>
+            <span>Información personal</span>
           </div>
           <div className="Info__asideOption active">
             <span className="material-icons">note_add</span>
-            <p>Solicitar exámenes</p>
+            <span>Solicitar exámenes</span>
           </div>
         </aside>
         <main>
