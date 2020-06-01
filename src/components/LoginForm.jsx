@@ -40,6 +40,7 @@ const LoginForm = props => {
     setState({ ...initialState });
   };
 
+    
   // const sendUserInformation = async (url, method, data) => {
   //   try {
   //     const response = await fetch(url, {
@@ -52,6 +53,7 @@ const LoginForm = props => {
   //     return e;
   //   }
   // };
+
 
   const handleChange = e => {
     const { name, value } = e.target;
