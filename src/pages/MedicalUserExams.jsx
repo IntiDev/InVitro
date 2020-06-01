@@ -1,15 +1,18 @@
 import React from 'react';
-import Button from '../components/Button';
+import { Link } from 'react-router-dom';
+import OpenModal from '../components/OpenModal';
 import '../styles/pages/MedicalUserExams.styl';
 
 const MedicalUserExams = () => {
   return (
     <>
       <div className="Container">
-        <div className="Info__buttonAction">
-          <span className="material-icons">arrow_back</span>
-          <span>Atras</span>
-        </div>
+        <Link to="/medicalUserInfo">
+          <div className="Container__buttonAction">
+            <span className="material-icons">arrow_back</span>
+            <span>Atras</span>
+          </div>
+        </Link>
         <aside>
           <h2 className="Info__asideTitle">Opciones</h2>
           <div className="Info__asideOption">
@@ -43,7 +46,7 @@ const MedicalUserExams = () => {
               </td>
             </tr>
           </table>
-          <Button text="Agregar exámen" />
+          <OpenModal type="select" />
         </main>
       </div>
     </>

@@ -10,10 +10,13 @@ const UpdateForm = props => {
 
   const [user, setUser] = useState({
     idUser: item.idUser,
+    documentType: item.documentType,
     cedulaId: item.cedulaId,
     name: item.name,
+    lastname: item.lastname,
     email: item.email,
     phone: item.phone,
+    cellphone: item.cellphone,
     state: item.state,
     role: item.role,
   });
@@ -117,11 +120,14 @@ const UpdateForm = props => {
 
           <label htmlFor="role">
             Tipo de Usuario
-            <select id="role" name="role" defaultValue={item.role}>
+            <select id="role" name="role" onChange={handleChange}>
+              <option value="none" selected disable hidden>
+                {' '}
+                Selecciona un rol
+              </option>
               <option value="Paciente">Paciente</option>
-              <option value="Doctor">Doctor</option>
-              <option value="Admin">Admin</option>
-              <option value="Bacteriologo">Bacteriologo</option>
+              <option value="Medico">Médico</option>
+              <option value="Administrador">Administrador</option>
             </select>
           </label>
 

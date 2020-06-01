@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 import UpdateForm from './UpdateForm';
+import ExamModal from './ExamModal';
+import Button from './Button';
 import '../styles/components/OpenModal.styl';
 
 const OpenModal = ({ type, item, history }) => {
@@ -35,6 +37,15 @@ const OpenModal = ({ type, item, history }) => {
           onCloseModal={handleCloseModal}
           history={history}
         />
+      </>
+    );
+  }
+
+  if (type === 'select') {
+    return (
+      <>
+        <Button text="Agregar exámen" onClick={handleOpenModal} />
+        <ExamModal item={item} isOpen={modal} onCloseModal={handleCloseModal} />
       </>
     );
   }

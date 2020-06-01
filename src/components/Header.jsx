@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/components/Header.styl';
 
-const Header = props => {
-  const { user, userName } = props;
+const Header = () => {
   return (
     <div className="Header">
       <img
@@ -10,21 +10,23 @@ const Header = props => {
         alt="Logo"
         className="Header__logo"
       />
-      <h2 className="Header__title">
-        Portal de
-        {user}
-      </h2>
       <div className="Header__userInformation">
-        <p>
-          Bienvenido <br />
-          {userName}
-        </p>
+        <p>Bienvenido {/* <br />
+          {userName} */}</p>
         <span
           className="Header__userIcon material-icons "
-          style={{ fontSize: 60 }}
+          style={{ fontSize: 40 }}
         >
           account_circle
         </span>
+        <Link to="/">
+          <span
+            className="Header__userIcon material-icons "
+            style={{ fontSize: 40 }}
+          >
+            exit_to_app
+          </span>
+        </Link>
       </div>
     </div>
   );

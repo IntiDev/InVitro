@@ -1,45 +1,39 @@
 @import 'General.styl'
 
-body
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: light-primary-color 
 
-  .examsModal
-    background-color: secondary-color
-    width: 300px
-    padding: 40px 50px
-    border-radius: 25px
-    position relative
+.examsModal
+  background-color: secondary-color
+  width: 300px
+  padding: 40px 50px
+  position relative
 
-    &__closeIcon
-      position absolute
-      top 24px
-      right: 34px
-    
-    &__title 
-      margin-top: 0
-      text-align: center
-    
-    &__form
-      text-align: start
+  &__closeIcon
+    position absolute
+    top 24px
+    right: 34px
+  
+  &__title 
+    margin-top: 0
+    text-align: center
+  
+  &__form
+    text-align: start
+    display: grid
+    grid-gap: 15px
+  
+    &Item
       display: grid
-      grid-gap: 15px
+      grid-gap: 5px
     
-      &Item
-        display: grid
-        grid-gap: 5px
-      
-        textarea
-          resize: none
-    
-      &Submit
-        background-color: accent-color
-        color: white
-        margin-top: 10px
-        width 100%
-        justify-self: center
+      textarea
+        resize: none
+  
+    &Submit
+      background-color: accent-color
+      color: white
+      margin-top: 10px
+      width 100%
+      justify-self: center
 
       
     

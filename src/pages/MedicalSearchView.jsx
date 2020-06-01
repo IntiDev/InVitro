@@ -35,7 +35,7 @@ const MedicalSearchView = () => {
   };
 
   const handleClick = () => {
-    sendUserId(`${API_URL}buscar-pacientes`, 'POST', { filtro: userId })
+    sendUserId(`${API_URL}buscar-Paciente`, 'POST', { filtro: userId })
       .then(() => {
         // console.log(response);
         clearState();
@@ -50,7 +50,7 @@ const MedicalSearchView = () => {
       <div className="Search__container">
         <h2> Buscar Paciente</h2>
         <p>
-          Digite el número de identificación del paciente para cargar resultados
+          Digite el número de identificación del Paciente para cargar resultados
         </p>
         <div className="Search__form">
           <input

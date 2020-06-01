@@ -4,7 +4,7 @@ import React from 'react';
 import '../styles/components/SideMenu.styl';
 
 const SideMenu = ({ useFilter }) => {
-  const menuInfo = ['Administradores', 'Pacientes', 'Medicos', 'Usuarios'];
+  const menuInfo = ['Administrador', 'Paciente', 'Medico', 'Usuarios'];
   return (
     <div className="sideMenu">
       <h2 className="sideMenu__title">Filtros</h2>

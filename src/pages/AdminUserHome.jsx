@@ -11,11 +11,11 @@ const AdminUserHome = ({ users, history }) => {
 
   const filteredUsers = useFilter => {
     if (
-      useFilter === 'Medicos' ||
-      useFilter === 'Pacientes' ||
-      useFilter === 'Administradores'
+      useFilter === 'Medico' ||
+      useFilter === 'Paciente' ||
+      useFilter === 'Administrador'
     ) {
-      return users.filter(user => user.rol === useFilter);
+      return users.filter(user => user.role === useFilter);
     }
     if (useFilter === 'Usuarios') {
       return users;
@@ -39,7 +39,7 @@ const AdminUserHome = ({ users, history }) => {
       <div className="userHome__table">
         <div className="userHome__tableActions">
           <div className="userHome__tableActions__filter">
-            <h2> {filterBy}</h2>
+            <h2> Usuarios </h2>
             <input type="text" placeholder="Filter" onChange={handleChange} />
           </div>
           <div>

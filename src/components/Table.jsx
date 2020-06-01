@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import OpenModal from './OpenModal';
 import '../styles/components/Table.styl';
@@ -42,7 +44,13 @@ const Table = ({ users, history }) => {
                   disable={item.state === 'Desactive' ? true : null}
                   history={history}
                 />
-                <OpenModal type="delete" item={item} />
+                {item.state === 'Active' ? (
+                  <OpenModal type="delete" item={item} />
+                ) : (
+                  <span className="material-icons" role="button">
+                    check_circle
+                  </span>
+                )}
               </td>
             </tr>
           ))}

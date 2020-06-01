@@ -13,6 +13,7 @@ const RegisterForm = props => {
     email: '',
     phone: '',
     cellphone: '',
+    role: '',
     state: 'Active',
   });
 
@@ -103,11 +104,10 @@ const RegisterForm = props => {
         <label htmlFor="role">
           {' '}
           Tipo de Usuario
-          <select id="role" name="role">
+          <select id="role" name="role" onChange={handleChange}>
             <option value="Paciente">Paciente</option>
-            <option value="Doctor">Doctor</option>
-            <option value="Admin">Admin</option>
-            <option value="Bacteriologo">Bacteriologo</option>
+            <option value="Medico">Médico</option>
+            <option value="Admintrador">Administrador</option>
           </select>
         </label>
 

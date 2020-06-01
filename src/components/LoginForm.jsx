@@ -27,7 +27,7 @@ const LoginForm = props => {
     },
     {
       id: 2,
-      email: 'medico@invitro.com',
+      email: 'Medico@invitro.com',
       name: 'Sofia',
       lastName: 'Ramirez',
       mobile: '56-45-34-45',
