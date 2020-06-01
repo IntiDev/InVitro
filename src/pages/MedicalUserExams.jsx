@@ -10,7 +10,7 @@ const MedicalUserExams = () => {
         <Link to="/medicalUserInfo">
           <div className="Container__buttonAction">
             <span className="material-icons">arrow_back</span>
-            <span>Atras</span>
+            <span>Atrás</span>
           </div>
         </Link>
         <aside>

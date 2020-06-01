@@ -1,9 +1,17 @@
 import React from 'react';
 import MedicalHistoryItem from './MedicalHistoryItem';
+import Button from './Button';
 import '../styles/components/MedicalHistoryForm.styl';
 
-const MedicalHistoryForm = props => {
-  const { name, lastname, celphone, phone, userId, typeId } = props;
+const MedicalHistoryForm = () => {
+  // const { name, lastname, celphone, phone, userId, typeId } = props;
+  const name = 'Sofia';
+  const lastname = 'Ramirez';
+  const celphone = '12-34-56-78';
+  const phone = '90-67-45-23';
+  const userId = '11111';
+  const typeId = 'Cédula';
+
   return (
     <div className="medicalHistoryForm">
       <div className="medicalHistoryForm__title">
@@ -55,20 +63,21 @@ const MedicalHistoryForm = props => {
         <div className="medicalHistoryForm__previousVisits__title">
           <h2>Historia clinica</h2>
           <div>
-            <a href="/">Agregar</a>
-            <a href="/">Ver más +</a>
+            {/* <a href="/">Agregar</a>
+            <a href="/">Ver más +</a> */}
           </div>
         </div>
         <div className="medicalHistoryForm__previousVisits_description">
           <MedicalHistoryItem
             date="17/12/2019"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque magnam modi deleniti commodi dolores. Aspernatur eaque itaque repudiandae dignissimos voluptatum harum placeat, commodi"
+            description="La paciente presenta migrañas constantes e insominio.  Se receta acido acetil salisilico 2 veces al día por 1 semana"
           />
         </div>
       </div>
-      <button className="medicalHistoryForm__submitBtn Button" type="submit">
+      {/* <button className="medicalHistoryForm__submitBtn Button" type="submit">
         Actualizar Datos
-      </button>
+      </button> */}
+      <Button text="Actualizar datos" disabled />
     </div>
   );
 };
