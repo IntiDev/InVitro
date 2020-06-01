@@ -4,15 +4,33 @@
   text-align: center
   padding: 40px
   color: dark-background-text
-  border: 1px solid dark-background-text
+  background-color: secondary-color
+  box-shadow: 4px 13px 5px -6px #bdbdbd;
+  
+  &__title
+    margin-top: 0px
 
   &__form
     display: grid
+    grid-row-gap: 10px
     text-align: left
-    grid-gap: 10px
+    
+    &__section
+      display: grid
+      grid-gap: 10px
+      grid-template-columns: 1fr 1fr
+      /* margin-bottom: 20px */
 
     label 
       display: grid
+
+      input
+        height: 30px
+        margin-top: 5px
+
+      select
+        margin-top: 5px
+        height: 36px
   
   &__submitButtom
     margin-top: 20px

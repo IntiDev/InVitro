@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteUser } from '../actions';
 import Modal from './Modal';
+import Button from './Button';
 import '../styles/components/ConfirmationModal.styl';
 
 const ConfirmationModal = props => {
@@ -15,12 +16,8 @@ const ConfirmationModal = props => {
         </span>
         <p>¿Esta seguro que desea deshabilitar al usuario {item.name} ?</p>
         <div className="confirmationModal__btn">
-          <button className="confirmationModal__btn--warning" type="button">
-            Borrar
-          </button>
-          <button className="confirmationModal__btn--cancel" type="button">
-            Cancelar
-          </button>
+          <Button text="Borrar" warningBtn></Button>
+          <Button text="Cancelar" cancelBtn></Button>
         </div>
       </div>
     </Modal>

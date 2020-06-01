@@ -1,0 +1,74 @@
+@import '../components/General.styl';
+
+.cardInfoContainer
+  position: relative
+  width: 90%
+  margin 0 auto
+  padding-top: 25px
+
+.Info
+  &__aside
+    color dark-primary-color
+    display inline-flex
+    flex-direction: column
+    margin 0 25px
+    width 25%
+
+  &__buttonAction
+    display: flex
+    align-items: center
+    position: absolute
+    background-color: accent-color
+    color white
+    padding: 10px 15px
+    border-radius: 40px 
+    margin-left: 25px
+
+    /* :first-child {
+      font-size 20px
+    } */
+
+  &__asideTitle
+    font-weight 400
+    margin-bottom 10px
+
+  &__asideOption
+    display inline-flex
+    flex-direction row
+    align-items center
+    align-content center
+    margin-bottom: 6px
+    > .material-icons
+      padding-right: 10px
+
+  &__asideOption:hover
+    color accent-color
+    cursor pointer
+
+  &__mainContainer
+    color dark-background-text
+    display inline-flex
+    flex-direction column
+    // justify-content: center
+    align-items center
+    background-color white
+    border-radius 5px
+    width 600px
+    padding: 40px
+    margin-bottom: 20px
+    box-shadow: 4px 13px 5px -6px #bdbdbd;
+
+  &__userIcon
+    color dark-primary-color
+    padding-top 25px
+
+.active
+  color accent-color
+
+.medicalHistoryForm
+  width 80%
+  border 0
+  padding 0
+
+.Add
+  color dark-primary-color

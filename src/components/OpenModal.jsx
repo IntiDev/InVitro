@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 import UpdateForm from './UpdateForm';
+import ExamModal from './ExamModal';
+import Button from './Button';
+import '../styles/components/OpenModal.styl';
 
 const OpenModal = ({ type, item, history }) => {
   const [modal, setModal] = useState('false');
@@ -19,7 +22,9 @@ const OpenModal = ({ type, item, history }) => {
     return (
       <>
         <span
-          className="material-icons"
+          className={`material-icons ${
+            item.state === 'Desactive' ? 'disableIcon' : ''
+          }`}
           onClick={() => handleOpenModal()}
           role="button"
         >
@@ -36,6 +41,15 @@ const OpenModal = ({ type, item, history }) => {
     );
   }
 
+  if (type === 'select') {
+    return (
+      <>
+        <Button text="Agregar exámen" onClick={handleOpenModal} />
+        <ExamModal item={item} isOpen={modal} onCloseModal={handleCloseModal} />
+      </>
+    );
+  }
+
   return (
     <>
       <span
@@ -43,7 +57,7 @@ const OpenModal = ({ type, item, history }) => {
         onClick={() => handleOpenModal()}
         role="button"
       >
-        delete
+        {item.state === 'Desactive' ? 'check_circle' : 'delete'}
       </span>
 
       <ConfirmationModal

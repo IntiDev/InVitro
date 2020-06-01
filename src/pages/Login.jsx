@@ -27,7 +27,7 @@ const Login = () => {
           <LoginForm title="Bienvenido" />
         </section>
       </div>
-      <Footer />
+      <Footer clinicalName=" In Vitro" />
     </>
   );
 };

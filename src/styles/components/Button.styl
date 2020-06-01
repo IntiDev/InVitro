@@ -2,13 +2,15 @@
 
 .Button
   background-color accent-color
+  width: 100%
   border 0
   border-radius 5px
   color secondary-color
   font-weight 600
-  padding 10px 50px
+  padding 8px 48px
   text-transform: uppercase
-  margin 15px
+  border 2px solid accent-color
+  margin 15px 0
 
   &:hover
      background-color secondary-color
@@ -17,8 +19,29 @@
      box-shadow 0 4px 16px accent-color
      transition all 0.2s ease;
 
+  &.warningBtn
+    background-color: red
+    border 2px solid red
+    &:hover
+      background-color secondary-color
+      border 2px solid red
+      color red
+      box-shadow 0 4px 16px red
+      transition all 0.2s ease;
+
+  &.cancelBtn
+    background-color: #757575
+    border 2px solid #757575
+    &:hover
+      background-color:divider-color
+      border 2px solid #757575
+      color dark-background-text
+      box-shadow 0 4px 16px divider-color
+      transition all 0.2s ease;
+
+
   &:disabled
     background-color secondary-text-color
+    border 2px solid secondary-text-color
     box-shadow none
     color secondary-color
-    border 0
