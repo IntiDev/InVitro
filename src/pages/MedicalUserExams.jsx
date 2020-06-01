@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import '../styles/pages/MedicalUserExams.styl';
 
@@ -6,10 +7,12 @@ const MedicalUserExams = () => {
   return (
     <>
       <div className="Container">
-        <div className="Info__buttonAction">
-          <span className="material-icons">arrow_back</span>
-          <span>Atras</span>
-        </div>
+        <Link to="medicalUserInfo">
+          <div className="Info__buttonAction">
+            <span className="material-icons">arrow_back</span>
+            <span>Atrás</span>
+          </div>
+        </Link>
         <aside>
           <h2 className="Info__asideTitle">Opciones</h2>
           <div className="Info__asideOption">
