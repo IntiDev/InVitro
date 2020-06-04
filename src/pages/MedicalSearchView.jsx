@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react';
-import Button from '../components/Button';
 import '../styles/pages/MedicalSearchView.styl';
+import SearchBox from '../components/SearchBox';
 
 const MedicalSearchView = () => {
   const initialState = {
@@ -100,25 +100,11 @@ const MedicalSearchView = () => {
 
   return (
     <div className="cardSearchContainer">
-      <div className="Search__container">
-        <h2> Buscar Paciente</h2>
-        <p>
-          Digite el número de identificación del Paciente para cargar resultados
-        </p>
-        <div className="Search__form">
-          <input
-            type="text"
-            name="userCc"
-            value={userCc}
-            className="Search__input"
-            placeholder="12345"
-            onChange={handleChange}
-          />
-
-          <Button text="Buscar" onClick={handleClick} />
-        </div>
-        <p className="Text__error">Lo sentimos el número es incorrecto</p>
-      </div>
+      <SearchBox
+        userCc={userCc}
+        handleChange={handleChange}
+        handleClick={handleClick}
+      ></SearchBox>
     </div>
   );
 };
