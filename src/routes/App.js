@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import MedicalSearchView from '../pages/MedicalSearchView';
 import MedicalViewUSerInfo from '../pages/MedicalViewUserInfo';
 import MedicalUserExams from '../pages/MedicalUserExams';
+import Bacteriologist from '../pages/BacteriologistHome';
 
 const App = () => (
   <BrowserRouter>
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path="/medical" component={MedicalSearchView} />
         <Route exact path="/medicalUserInfo" component={MedicalViewUSerInfo} />
         <Route exact path="/medicalUserExams" component={MedicalUserExams} />
+        <Route exact path="/bacteriologist" component={Bacteriologist} />
       </Layout>
     </Switch>
   </BrowserRouter>

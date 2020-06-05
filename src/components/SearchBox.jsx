@@ -19,7 +19,9 @@ const SearchBox = props => {
           placeholder="12345"
           onChange={handleChange}
         />
-        <Button text="Buscar" onClick={handleClick} />
+        <div className="Search__form__button">
+          <Button text="Buscar" onClick={handleClick} />
+        </div>
       </div>
       <p className="Text__error">Lo sentimos el número es incorrecto</p>
     </div>

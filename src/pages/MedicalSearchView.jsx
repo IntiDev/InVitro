@@ -99,12 +99,14 @@ const MedicalSearchView = () => {
   };
 
   return (
-    <div className="cardSearchContainer">
-      <SearchBox
-        userCc={userCc}
-        handleChange={handleChange}
-        handleClick={handleClick}
-      ></SearchBox>
+    <div className="searchContainer">
+      <div className="searchCard">
+        <SearchBox
+          userCc={userCc}
+          handleChange={handleChange}
+          handleClick={handleClick}
+        ></SearchBox>
+      </div>
     </div>
   );
 };
