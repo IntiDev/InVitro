@@ -8,6 +8,18 @@ import '../styles/components/ConfirmationModal.styl';
 const ConfirmationModal = props => {
   const { item, isOpen, onCloseModal } = props;
 
+  const desactiveUser = {
+    id: item.id,
+    idUser: item.idUser,
+    state: 'Desactive',
+  };
+
+  const handleButton = () => {
+    props.deleteUser(desactiveUser);
+    console.log('entro al boton');
+    onCloseModal();
+  };
+
   return (
     <Modal isOpen={isOpen} onCloseModal={onCloseModal}>
       <div className="confirmationModal">
@@ -16,8 +28,8 @@ const ConfirmationModal = props => {
         </span>
         <p>¿Esta seguro que desea deshabilitar al usuario {item.name} ?</p>
         <div className="confirmationModal__btn">
-          <Button text="Borrar" warningBtn></Button>
-          <Button text="Cancelar" cancelBtn></Button>
+          <Button text="Borrar" onClick={handleButton} warningBtn></Button>
+          <Button text="Cancelar" cancelBtn onClick={onCloseModal}></Button>
         </div>
       </div>
     </Modal>

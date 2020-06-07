@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../actions';
+import { registerUser } from '../actions';
 import Button from './Button';
 import '../styles/components/RegisterForm.styl';
 
@@ -18,7 +18,7 @@ const RegisterForm = props => {
   });
 
   const handleAddUser = () => {
-    props.addUser(user);
+    props.registerUser(user);
     props.history.push('/adminUser');
   };
 
@@ -120,7 +120,7 @@ const RegisterForm = props => {
 };
 
 const mapDispatchToProps = {
-  addUser,
+  registerUser,
 };
 
 export default connect(null, mapDispatchToProps)(RegisterForm);

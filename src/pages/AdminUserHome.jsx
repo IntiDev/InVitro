@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SideMenu from '../components/SideMenu';
 import Table from '../components/Table';
 import '../styles/pages/AdminUserHome.styl';
 import Button from '../components/Button';
+import { fetchAPI } from '../actions';
 
-const AdminUserHome = ({ users, history }) => {
+const AdminUserHome = props => {
+  const { users, history } = props;
+
+  useEffect(() => {
+    props.fetchAPI();
+  }, []);
+
   const [filterBy, setFilter] = useState('Usuarios');
 
   const filteredUsers = useFilter => {
@@ -63,4 +70,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(AdminUserHome);
+const mapDispatchToProps = {
+  fetchAPI,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminUserHome);
