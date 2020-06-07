@@ -7,25 +7,32 @@ const PatientInfo = () => {
   return (
     <>
       <div className="Container">
-        <Link to="/medicalUserInfo">
-          <div className="Container__buttonAction">
-            <span className="material-icons">arrow_back</span>
-            <span>Atrás</span>
-          </div>
-        </Link>
         <aside>
           <h2 className="Info__asideTitle">Opciones</h2>
-          <div className="Info__asideOption active">
-            <span className="material-icons">face</span>
-            <span>Información personal</span>
-          </div>
-          <div className="Info__asideOption">
-            <span className="material-icons">note_add</span>
-            <span>Consultar exámenes</span>
-          </div>
+          <Link to="/patientInfo">
+            <div className="Info__asideOption active">
+              <span className="material-icons">face</span>
+              <span>Información personal</span>
+            </div>
+          </Link>
+          <Link to="/patientExams">
+            <div className="Info__asideOption">
+              <span className="material-icons">note_add</span>
+              <span>Consultar exámenes</span>
+            </div>
+          </Link>
         </aside>
         <main>
-          <MedicalHistoryForm />
+          <MedicalHistoryForm
+            name="Hugo"
+            lastname="Lopez"
+            celphone="12-34-56-78"
+            phone="90-45-67-88"
+            userId="12345XDENE"
+            typeId="INE"
+            date="25/02/2020"
+            description="El paciente presenta dolor abdominal, se realizan estudios de orina con resultados normales, se descarta infección."
+          />
         </main>
       </div>
     </>

@@ -4,9 +4,6 @@ import MedicalHistoryForm from '../components/MedicalHistoryForm';
 import '../styles/pages/MedicalViewUSerInfo.styl';
 
 const MedicalViewUSerInfo = () => {
-  // let patientData = localStorage.getItem("infoPatient");
-  // console.log(patientData);
-
   return (
     <>
       <div className="cardInfoContainer">
@@ -30,7 +27,17 @@ const MedicalViewUSerInfo = () => {
           </Link>
         </aside>
         <main className="Info__mainContainer">
-          <MedicalHistoryForm />
+          <MedicalHistoryForm
+            name="Sofia"
+            lastname="Ramirez"
+            celphone="12-34-56-78"
+            phone="90-67-45-23"
+            userId="11111"
+            typeId="Cédula"
+            date="13/01/2020"
+            description="La paciente presenta migrañas constantes e insominio.  Se receta acido acetil salisilico 2 veces al día por 1 semana"
+            buttonVisible
+          />
         </main>
       </div>
     </>

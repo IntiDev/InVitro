@@ -3,14 +3,18 @@ import MedicalHistoryItem from './MedicalHistoryItem';
 import Button from './Button';
 import '../styles/components/MedicalHistoryForm.styl';
 
-const MedicalHistoryForm = () => {
-  // const { name, lastname, celphone, phone, userId, typeId } = props;
-  const name = 'Sofia';
-  const lastname = 'Ramirez';
-  const celphone = '12-34-56-78';
-  const phone = '90-67-45-23';
-  const userId = '11111';
-  const typeId = 'Cédula';
+const MedicalHistoryForm = props => {
+  const {
+    name,
+    lastname,
+    celphone,
+    phone,
+    userId,
+    typeId,
+    date,
+    description,
+    buttonVisible,
+  } = props;
 
   return (
     <div className="medicalHistoryForm">
@@ -68,16 +72,14 @@ const MedicalHistoryForm = () => {
           </div>
         </div>
         <div className="medicalHistoryForm__previousVisits_description">
-          <MedicalHistoryItem
-            date="17/12/2019"
-            description="La paciente presenta migrañas constantes e insominio.  Se receta acido acetil salisilico 2 veces al día por 1 semana"
-          />
+          <MedicalHistoryItem date={date} description={description} />
         </div>
       </div>
       {/* <button className="medicalHistoryForm__submitBtn Button" type="submit">
         Actualizar Datos
       </button> */}
-      <Button text="Actualizar datos" disabled />
+
+      {buttonVisible ? <Button text="Actualizar datos" /> : ''}
     </div>
   );
 };
