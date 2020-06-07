@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { updateUser } from '../actions';
+import { editUser } from '../actions';
 import Button from './Button';
 import Modal from './Modal';
 import '../styles/components/RegisterForm.styl';
@@ -9,6 +9,7 @@ const UpdateForm = props => {
   const { item, isOpen, onCloseModal } = props;
 
   const [user, setUser] = useState({
+    id: item.id,
     idUser: item.idUser,
     documentType: item.documentType,
     cedulaId: item.cedulaId,
@@ -22,7 +23,7 @@ const UpdateForm = props => {
   });
 
   const handleUpdateUser = () => {
-    props.updateUser(user);
+    props.editUser(user);
     console.log(user);
     onCloseModal();
   };
@@ -139,7 +140,7 @@ const UpdateForm = props => {
 };
 
 const mapDispatchToProps = {
-  updateUser,
+  editUser,
 };
 
 export default connect(null, mapDispatchToProps)(UpdateForm);

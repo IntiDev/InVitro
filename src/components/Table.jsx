@@ -1,15 +1,26 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import { connect } from 'react-redux';
+import { deleteUser } from '../actions';
 import OpenModal from './OpenModal';
 import '../styles/components/Table.styl';
 
-const Table = ({ users, history }) => {
+const Table = props => {
+  const { users, history } = props;
   const data = {
     tableViewData: ['Cedula', 'Nombre', 'Celular', 'Correo', 'Rol', 'Estado'],
     userInformation: users,
   };
 
+  const handleActiveIcon = user => {
+    const activeUser = {
+      id: user.id,
+      idUser: user.idUser,
+      state: 'Active',
+    };
+    props.deleteUser(activeUser);
+  };
   return (
     <div className="container">
       <table className="Table">
@@ -47,7 +58,11 @@ const Table = ({ users, history }) => {
                 {item.state === 'Active' ? (
                   <OpenModal type="delete" item={item} />
                 ) : (
-                  <span className="material-icons" role="button">
+                  <span
+                    className="material-icons"
+                    role="button"
+                    onClick={() => handleActiveIcon(item)}
+                  >
                     check_circle
                   </span>
                 )}
@@ -60,4 +75,8 @@ const Table = ({ users, history }) => {
   );
 };
 
-export default Table;
+const mapDispatchToProps = {
+  deleteUser,
+};
+
+export default connect(null, mapDispatchToProps)(Table);
