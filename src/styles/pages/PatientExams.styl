@@ -1,29 +1,37 @@
 @import '../components/General.styl';
 
-.Patient-info
-  color dark-primary-color
-  text-align center
+.Container
+  .Patient-info
+    color dark-primary-color
+    text-align center
 
-hr
-  width 100%
-  margin-top 25px
-  color divider-color
+  hr
+    width 100%
+    margin-top 25px
+    border-color light-primary-color
 
-table
-  color dark-background-text
+  table.Patient-table_info
+    color dark-background-text
+    margin-top 0
+    tr
+      border-bottom 0
 
-thead
-  color dark-primary-color
-  text-align center
-  > td
-    padding 10px 0
+    thead
+      color dark-primary-color
+      text-align center
+      tr
+        td
+          padding 10px 0
 
+    tbody
+      tr
+        text-align left
 
-span.activeIcon
-  color accent-color
-  pointer-events: none
+  span.activeIcon
+    color accent-color
+    pointer-events: none
 
-tr.pending-exam > td
-  color divider-color
-  > span.material-icons
-     pointer-events: none
+  tr.pending-exam > td
+    color divider-color
+    > span.material-icons
+      pointer-events: none

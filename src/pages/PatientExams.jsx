@@ -4,7 +4,34 @@ import Button from '../components/Button';
 import '../styles/pages/PatientExams.styl';
 
 const PatientExams = props => {
-  const { name = 'Hugo', lastname = 'Lopez', cc = '9192807' } = props;
+  const {
+    name = 'Hugo',
+    lastname = 'Lopez',
+    cc = '9192807',
+    examsData = [
+      {
+        examId: '345',
+        date: '05/06/2020',
+        typeExam: 'Exámen de orina',
+        instructions: 'Presentar primera muestra del día',
+        state: false,
+      },
+      {
+        examId: '234',
+        date: '15/03/2020',
+        typeExam: 'Exámen de sangre',
+        instructions: 'Presentarse a su cita en ayuno de 8 horas',
+        state: true,
+      },
+      {
+        examId: '240',
+        date: '15/03/2020',
+        typeExam: 'Exámen de glucosa',
+        instructions: 'Presentarse a su cita en ayuno de 8 horas',
+        state: true,
+      },
+    ],
+  } = props;
 
   return (
     <>
@@ -26,48 +53,51 @@ const PatientExams = props => {
         </aside>
         <main>
           <div className="Patient-info">
-            <h2>{`${name}${lastname}`}</h2>
+            <h2>{`${name} ${lastname}`}</h2>
             <span> C.C. {cc}</span>
           </div>
           <hr />
-          <table>
+          <table className="Patient-table_info">
             <thead>
-              <td></td>
-              <td>Fecha</td>
-              <td>Tipo de exámen</td>
-              <td>Indicaciones</td>
-              <td>Estado</td>
+              <tr>
+                <td></td>
+                <td>Fecha</td>
+                <td>Tipo de exámen</td>
+                <td>Indicaciones</td>
+                <td>Estado</td>
+              </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <input type="checkbox" name="" id="" />
-                </td>
-                <td>20/12/19</td>
-                <td>Exámen de sangre</td>
-                <td> Presentarse a su cita en ayuno de 8 horas</td>
-                <td className="Actions_button">
-                  <span
-                    className="material-icons activeIcon"
-                    style={{ fontSize: 20 }}
-                  >
-                    check
-                  </span>
-                </td>
-              </tr>
-              <tr className="pending-exam">
-                <td>
-                  <input type="checkbox" name="" id="" disabled />
-                </td>
-                <td>07/03/20</td>
-                <td>Exámen de orina</td>
-                <td>Primera orina del día</td>
-                <td className="Actions_button">
-                  <span className="material-icons" style={{ fontSize: 20 }}>
-                    timer
-                  </span>
-                </td>
-              </tr>
+              {examsData.map(item => (
+                <tr
+                  key={item.examId}
+                  className={item.state ? '' : 'pending-exam'}
+                >
+                  <td>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      disabled={item.state ? '' : 'disabled'}
+                    />
+                  </td>
+                  <td>{item.date}</td>
+                  <td>{item.typeExam}</td>
+                  <td>{item.instructions}</td>
+                  <td className="Actions_button">
+                    <span
+                      className={
+                        item.state
+                          ? 'material-icons activeIcon'
+                          : 'material-icons'
+                      }
+                      style={{ fontSize: 20 }}
+                    >
+                      {item.state ? 'check' : 'timer'}
+                    </span>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
           <Button text="Descargar" />
