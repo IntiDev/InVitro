@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import '../styles/pages/PatientExams.styl';
@@ -32,6 +32,25 @@ const PatientExams = props => {
       },
     ],
   } = props;
+
+  const initialState = {
+    checked: {},
+  };
+
+  const [{ checked }, setState] = useState(initialState);
+
+  // const clearState = () => {
+  //   setState({ ...initialState });
+  // };
+
+  const onSelectedChange = index => {
+    setState(previousState => ({
+      checked: {
+        ...previousState.checked,
+        [index]: !previousState.checked[index],
+      },
+    }));
+  };
 
   return (
     <>
@@ -68,7 +87,7 @@ const PatientExams = props => {
               </tr>
             </thead>
             <tbody>
-              {examsData.map(item => (
+              {examsData.map((item, index) => (
                 <tr
                   key={item.examId}
                   className={item.state ? '' : 'pending-exam'}
@@ -79,6 +98,8 @@ const PatientExams = props => {
                       name=""
                       id=""
                       disabled={item.state ? '' : 'disabled'}
+                      onChange={() => onSelectedChange(index)}
+                      checked={checked[index] || false}
                     />
                   </td>
                   <td>{item.date}</td>
