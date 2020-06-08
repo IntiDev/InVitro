@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../components/Button';
 import '../styles/pages/PatientExams.styl';
 
-const PatientExams = () => {
+const PatientExams = props => {
+  const { name = 'Hugo', lastname = 'Lopez', cc = '9192807' } = props;
+
   return (
     <>
       <div className="Container">
@@ -22,27 +25,53 @@ const PatientExams = () => {
           </Link>
         </aside>
         <main>
-          <h2>Exámenes a solicitar</h2>
-          <p> Nombre Apellido</p>
-          <span> 123456</span>
+          <div className="Patient-info">
+            <h2>{`${name}${lastname}`}</h2>
+            <span> C.C. {cc}</span>
+          </div>
+          <hr />
           <table>
-            <tr>
-              <td>20/12/19</td>
-              <td>Exámen de sangre</td>
-              <td className="Actions_button">
-                <span className="material-icons">edit</span>
-                <span className="material-icons">delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>07/03/20</td>
-              <td>Exámen de orina</td>
-              <td className="Actions_button">
-                <span className="material-icons">edit</span>
-                <span className="material-icons">delete</span>
-              </td>
-            </tr>
+            <thead>
+              <td></td>
+              <td>Fecha</td>
+              <td>Tipo de exámen</td>
+              <td>Indicaciones</td>
+              <td>Estado</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="checkbox" name="" id="" />
+                </td>
+                <td>20/12/19</td>
+                <td>Exámen de sangre</td>
+                <td> Presentarse a su cita en ayuno de 8 horas</td>
+                <td className="Actions_button">
+                  <span
+                    className="material-icons activeIcon"
+                    style={{ fontSize: 20 }}
+                  >
+                    check
+                  </span>
+                </td>
+              </tr>
+              <tr className="pending-exam">
+                <td>
+                  <input type="checkbox" name="" id="" disabled />
+                </td>
+                <td>07/03/20</td>
+                <td>Exámen de orina</td>
+                <td>Primera orina del día</td>
+                <td className="Actions_button">
+                  <span className="material-icons" style={{ fontSize: 20 }}>
+                    timer
+                  </span>
+                </td>
+              </tr>
+            </tbody>
           </table>
+          <Button text="Descargar" />
+          {/* <span className="material-icons" style={{ fontSize: 20 }}>get_app</span> */}
         </main>
       </div>
     </>
