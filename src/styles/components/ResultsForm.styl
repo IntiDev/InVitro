@@ -1,14 +1,23 @@
 @import General
 
 .resultsCard
-  width: 35%
+  max-width: 600px;
+  margin: 0 auto;
   padding: 40px
   display: grid
+  grid-row-gap: 16px
   color: dark-background-text
-  border: 1px solid dark-background-text
-  
+  box-shadow: 4px 13px 5px -6px #bdbdbd;
+  background-color: #fff;
+
   &__userInfo
     text-align: center
+
+    h1 
+      margin-bottom: 0px
+    
+    h3 
+      margin-top: 0px
 
   &__form
     display: grid
@@ -17,6 +26,10 @@
 
     label 
       display: grid
+
+      input
+        height: 30px;
+        margin-top: 5px;
 
   &__submitBtn
     margin-top: 20px

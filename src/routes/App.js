@@ -10,6 +10,7 @@ import MedicalUserExams from '../pages/MedicalUserExams';
 import Bacteriologist from '../pages/BacteriologistHome';
 import PatientInfo from '../pages/PatientInfo';
 import PatientExams from '../pages/PatientExams';
+import UploadExamResults from '../pages/UploadExamResults';
 
 const App = () => (
   <BrowserRouter>
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path="/bacteriologist" component={Bacteriologist} />
         <Route exact path="/patientInfo" component={PatientInfo} />
         <Route exact path="/patientExams" component={PatientExams} />
+        <Route exact path="/uploadExams" component={UploadExamResults} />
       </Layout>
     </Switch>
   </BrowserRouter>
