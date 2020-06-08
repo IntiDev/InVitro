@@ -1,30 +1,36 @@
 import React from 'react';
+import Button from './Button';
 import '../styles/components/ResultsForm.styl';
 
-const ResultsForm = props => {
-  const { user, id, exam, typeId, examResult } = props;
+const ResultsForm = () => {
+  /* const { user, id, exam, typeId, examResult } = props; */
+  const examResult = {
+    name: 'Examen de Sangre 1',
+    results: {
+      Globulos: 'Globulitos',
+      Plaquetas: 'Plaquetotas',
+      Leucocitos: 'Plaquetotas',
+      Insulina: 'Plaquetotas',
+      Glucosa: 'Plaquetotas',
+      Otro: 'Plaquetotas',
+    },
+  };
   return (
     <div className="resultsCard">
       <div className="resultsCard__userInfo">
-        <h1>{user}</h1>
-        <h2>
-          {typeId}
-          {id}
-        </h2>
-        <h2>{exam}</h2>
+        <h1> Fulanito Gonzalez</h1>
+        <h3>C.C : 19.142.879</h3>
+        <h2>{examResult.name}</h2>
       </div>
       <form action="" className="resultsCard__form">
-        {examResult.map(result => (
-          <label htmlFor={result.name} key={result.name}>
-            {result.name}
+        {Object.keys(examResult.results).map(result => (
+          <label htmlFor={result} key={result}>
+            {result}
             <input type="text" />
           </label>
         ))}
       </form>
-      <button className="resultsCard__submitBtn" type="button">
-        {' '}
-        Cargar Resultados
-      </button>
+      <Button text="Cargar Resultados" />
     </div>
   );
 };
