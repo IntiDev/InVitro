@@ -34,6 +34,15 @@ const LoginForm = props => {
       phone: '88-44-66-33',
       userType: 'medical',
     },
+    {
+      id: 3,
+      email: 'hugo@dominio.com',
+      name: 'Hugo',
+      lastName: 'Lopez',
+      mobile: '12-34-56-78',
+      phone: '90-45-67-88',
+      userType: 'patient',
+    },
   ];
 
   const clearState = () => {
@@ -91,6 +100,8 @@ const LoginForm = props => {
       case 'bacteriologist':
         break;
       case 'patient':
+        // eslint-disable-next-line no-undef
+        location.href = '/patientInfo';
         break;
       default:
         // console.error("Login incorrecto");
