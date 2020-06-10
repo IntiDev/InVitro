@@ -1,12 +1,11 @@
 @import General
 
-.registerCard
+.updateCard
   text-align: center
   padding: 40px
   color: dark-background-text
   background-color: secondary-color
-  box-shadow: 4px 13px 5px -6px #bdbdbd;
-  
+
   &__title
     margin-top: 0px
 
@@ -38,11 +37,14 @@
 
 
 @media (max-width: 500px)
-  .registerCard
-    margin-bottom: 25px
+  .updateCard
+    
+    &__form
+      max-height: 300px
+      overflow: scroll
 
-    &__form__section
-      grid-template-columns: 1fr
+      &__section
+        grid-template-columns: 1fr
 
 
 

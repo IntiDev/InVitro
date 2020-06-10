@@ -50,15 +50,21 @@ const AdminUserHome = props => {
             <input type="text" placeholder="Filter" onChange={handleChange} />
           </div>
           <div>
-            <Link to="/register">
+            <Link className="Boton" to="/register">
               <Button className="button" text="Nuevo Usuario" />
             </Link>
-            <Link to="/adminUser">
+            <Link className="Boton" to="/adminUser">
               <Button text="Cargar CSV " disabled />
             </Link>
           </div>
         </div>
+
         <Table users={filteredUsers(filterBy)} history={history} />
+      </div>
+      <div>
+        <Link to="/register">
+          <span className="material-icons addUser">add_circle</span>
+        </Link>
       </div>
     </div>
   );

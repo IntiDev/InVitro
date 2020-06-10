@@ -7,11 +7,11 @@ const Layout = ({ children }) => (
   <div className="App">
     <Header className="Prueba" />
     {children}
-    <img
+    {/* <img
       className="background"
       src="/src/assets/images/personMockup.png"
       alt=""
-    />
+    /> */}
     <Footer clinicalName=" In Vitro" />
   </div>
 );

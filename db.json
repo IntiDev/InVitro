@@ -255,16 +255,16 @@
     },
     {
       "id": 401,
+      "idUser": 1020,
       "documentType": "cedula",
       "cedulaId": "88888888",
-      "name": "pepe",
+      "name": "pepee",
       "lastname": "perezzzzz",
       "email": "pepe@perez.com.cooooo",
       "phone": "32132132",
       "cellphone": "21321321",
       "state": "Active",
-      "role": "Administrador",
-      "idUser": 1020
+      "role": "Administrador"
     },
     {
       "id": 402,

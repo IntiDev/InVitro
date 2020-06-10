@@ -27,7 +27,9 @@ const Table = props => {
         <thead>
           <tr className="Table__header">
             {data.tableViewData.map(item => (
-              <th key={item}>{item}</th>
+              <th className={`Table__header__${item}`} key={item}>
+                {item}
+              </th>
             ))}
             <th>Acciones</th>
           </tr>
@@ -42,13 +44,13 @@ const Table = props => {
                   : 'Table__row'
               }
             >
-              <td className="Table__cell">{item.cedulaId}</td>
-              <td className="Table__cell">{`${item.name} ${item.lastname}`}</td>
-              <td className="Table__cell">{item.phone}</td>
-              <td className="Table__cell">{item.email}</td>
-              <td className="Table__cell">{item.role}</td>
-              <td className="Table__cell">{item.state}</td>
-              <td className="Table__actions">
+              <td className="Table__cell cell_cedula">{item.cedulaId}</td>
+              <td className="Table__cell cell_name">{`${item.name} ${item.lastname}`}</td>
+              <td className="Table__cell cell_phone">{item.phone}</td>
+              <td className="Table__cell cell_email">{item.email}</td>
+              <td className="Table__cell cell_role">{item.role}</td>
+              <td className="Table__cell cell_state">{item.state}</td>
+              <td className="Table__actions cell_actions">
                 <OpenModal
                   type="edit"
                   item={item}
