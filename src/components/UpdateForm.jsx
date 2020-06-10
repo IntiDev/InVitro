@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { editUser } from '../actions';
 import Button from './Button';
 import Modal from './Modal';
-import '../styles/components/RegisterForm.styl';
+import '../styles/components/UpdateForm.styl';
 
 const UpdateForm = props => {
   const { item, isOpen, onCloseModal } = props;
@@ -37,10 +37,10 @@ const UpdateForm = props => {
 
   return (
     <Modal isOpen={isOpen} onCloseModal={onCloseModal}>
-      <div className="registerCard">
-        <h1 className="registerCard__title">Modificar Informacion</h1>
-        <form className="registerCard__form" action="">
-          <div className="registerCard__form__section">
+      <div className="updateCard">
+        <h1 className="updateCard__title">Modificar Informacion</h1>
+        <form className="updateCard__form" action="">
+          <div className="updateCard__form__section">
             <label htmlFor="documentType">
               Tipo de Documento
               <input
@@ -131,9 +131,8 @@ const UpdateForm = props => {
               <option value="Administrador">Administrador</option>
             </select>
           </label>
-
-          <Button text="Actualizar" onClick={handleUpdateUser} />
         </form>
+        <Button text="Actualizar" onClick={handleUpdateUser} />
       </div>
     </Modal>
   );

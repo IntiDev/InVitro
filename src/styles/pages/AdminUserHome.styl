@@ -1,7 +1,6 @@
-
 .userHome
   display: grid
-  grid-template-columns: 0.2fr 1fr
+  grid-template-columns: 0.2fr minmax(250px, 1fr);
   width: 90%;
   max-width: 1400px;
   margin: 0px auto
@@ -22,7 +21,6 @@
       grid-template-columns: 1fr 1fr
       grid-column-gap: 10px
       
-
     &__filter
       width: 300px
       display: flex
@@ -31,5 +29,34 @@
       
       input
         height 26px
+
+  .addUser
+    display: none
         
+
+@media screen and (max-width: 1250px)
+
+  .userHome
+    grid-template-columns: minmax(200px, 1fr)
+    justify-self: center
+    
+    &__table 
+      padding: 15px 10px 0px; 
+
+  .sideMenu
+    display: none
+
+
+@media (max-width: 720px)
+  .userHome
+    .addUser
+        display: block
+        color: orange
+        font-size: 48px
+        margin: 10px
+    &__tableActions
+      .Boton
+        display: none
+
+
 
