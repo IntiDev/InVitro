@@ -14,9 +14,9 @@ const ExamsTable = ({ user, show }) => {
           </h3>
           <span>{user.cedulaId}</span>
         </div>
-        <table className="Table">
+        <table className="examsTable">
           <thead>
-            <tr className="Table__header">
+            <tr className="examsTable__header">
               {headerTable.map(item => (
                 <th key={item}>{item}</th>
               ))}
@@ -32,10 +32,13 @@ const ExamsTable = ({ user, show }) => {
                 : 'Table__row'
             } */
               >
-                <td className="Table__cell">{item.date}</td>
-                <td className="Table__cell"> {item.examType}</td>
-                <td className="Table__cell">{item.state}</td>
-                <td className="Table__cell">Cargar</td>
+                <td className="examsTable__cell cell__date">{item.date}</td>
+                <td className="examsTable__cell cell__type">
+                  {' '}
+                  {item.examType}
+                </td>
+                <td className="examsTable__cell cell__status">{item.state}</td>
+                <td className="examsTable__cell cell__action">Cargar</td>
               </tr>
             ))}
           </tbody>
