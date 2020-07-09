@@ -27,7 +27,7 @@ const LoginForm = props => {
     },
     {
       id: 2,
-      email: 'Medico@invitro.com',
+      email: 'medico@invitro.com',
       name: 'Sofia',
       lastName: 'Ramirez',
       mobile: '56-45-34-45',
@@ -44,12 +44,12 @@ const LoginForm = props => {
       userType: 'patient',
     },
     {
-      id: 3,
-      email: 'bacteriologo@dominio.com',
-      name: 'Luis',
-      lastName: 'Lopez',
-      mobile: '12-34-56-78',
-      phone: '90-45-67-88',
+      id: 4,
+      email: 'bacteriologo@invitro.com',
+      name: 'Fernanda',
+      lastName: 'Perez',
+      mobile: '57-43-42-75',
+      phone: '18-33-80-43',
       userType: 'bacteriologist',
     },
   ];
