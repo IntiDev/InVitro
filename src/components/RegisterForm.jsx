@@ -7,14 +7,14 @@ import '../styles/components/RegisterForm.styl';
 const RegisterForm = props => {
   const [user, setUser] = useState({
     documentType: '',
-    cedulaId: '',
+    identityCard: '',
     name: '',
-    lastname: '',
+    lastName: '',
     email: '',
-    phone: '',
-    cellphone: '',
-    role: '',
-    state: 'Active',
+    phoneNumber: '',
+    numberContact: '',
+    rol: '',
+    userStatus: true,
   });
 
   const handleAddUser = () => {
@@ -40,7 +40,7 @@ const RegisterForm = props => {
       <h1 className="registerCard__title">Datos del usuario</h1>
       <form className="registerCard__form" action="">
         <div className="registerCard__form__section">
-          <label htmlFor="documentType">
+          {/* <label htmlFor="documentType">
             Tipo de Documento
             <input
               type="text"
@@ -49,48 +49,77 @@ const RegisterForm = props => {
               onChange={handleChange}
             />
           </label>
+ */}
+          <label htmlFor="documentType">
+            {' '}
+            Tipo de Documento
+            <select
+              id="documentType"
+              name="documentType"
+              onChange={handleChange}
+              required
+            >
+              <option value="none" selected disable="true" hidden>
+                {' '}
+                Selecciona un documento
+              </option>
+              <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+              <option value="Cedula de Extranjeria">
+                Cedula de Extranjeria
+              </option>
+              <option value="Pasaporte">Pasaporte</option>
+            </select>
+          </label>
 
-          <label htmlFor="cedulaId">
+          <label htmlFor="identityCard">
             Documento
             <input
               type="text"
-              name="cedulaId"
-              id="cedulaId"
+              name="identityCard"
+              id="identityCard"
               onChange={handleChange}
+              required
             />
           </label>
 
           <label htmlFor="name">
             Nombre
-            <input type="text" name="name" id="name" onChange={handleChange} />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleChange}
+              required
+            />
           </label>
 
-          <label htmlFor="lastname">
+          <label htmlFor="lastName">
             Apellido
             <input
               type="text"
-              name="lastname"
-              id="lastname"
+              name="lastName"
+              id="lastName"
               onChange={handleChange}
+              required
             />
           </label>
 
-          <label htmlFor="cellphone">
+          <label htmlFor="numberContact">
             Celular
             <input
               type="text"
-              name="cellphone"
-              id="cellphone"
+              name="numberContact"
+              id="numberContact"
               onChange={handleChange}
             />
           </label>
 
-          <label htmlFor="phone">
+          <label htmlFor="phoneNumber">
             Tlf Fijo
             <input
               type="text"
-              name="phone"
-              id="phone"
+              name="phoneNumber"
+              id="phoneNumber"
               onChange={handleChange}
             />
           </label>
@@ -98,21 +127,31 @@ const RegisterForm = props => {
 
         <label htmlFor="email">
           Correo
-          <input type="mail" name="email" id="email" onChange={handleChange} />
+          <input
+            type="mail"
+            name="email"
+            id="email"
+            onChange={handleChange}
+            required
+          />
         </label>
 
-        <label htmlFor="role">
+        <label htmlFor="rol">
           {' '}
           Tipo de Usuario
-          <select id="role" name="role" onChange={handleChange}>
+          <select id="rol" name="rol" onChange={handleChange} required>
+            <option value="none" selected disable="true" hidden>
+              {' '}
+              Selecciona un rol
+            </option>
             <option value="Paciente">Paciente</option>
             <option value="Medico">Médico</option>
-            <option value="Admintrador">Administrador</option>
+            <option value="Administrador">Administrador</option>
           </select>
         </label>
 
         <div>
-          <Button onClick={handleAddUser} text="Crear" />
+          <Button onClick={handleAddUser} inputButton text="Crear" />
         </div>
       </form>
     </div>

@@ -10,8 +10,8 @@ const ConfirmationModal = props => {
 
   const desactiveUser = {
     id: item.id,
-    idUser: item.idUser,
-    state: 'Desactive',
+    /* idUser: item.idUser, */
+    userStatus: false,
   };
 
   const handleButton = () => {

@@ -20,7 +20,7 @@ export const getListUsers = payload => ({
 
 export const fetchAPI = () => {
   return dispatch => {
-    fetch('http://localhost:3000/users')
+    fetch('http://localhost:3000/user')
       .then(response => response.json())
       .then(data => dispatch(getListUsers(data)))
       .then(() => console.log('Fetch'))
@@ -30,13 +30,14 @@ export const fetchAPI = () => {
 
 export const registerUser = payload => {
   return dispatch => {
-    fetch('http://localhost:3000/users', {
+    fetch('http://localhost:3000/user', {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json',
       },
     })
+      .then(console.log(payload))
       .then(() => dispatch(addUser(payload)))
       .catch(err => console.log(`Error en Actions ${err}`));
   };
@@ -44,7 +45,7 @@ export const registerUser = payload => {
 
 export const editUser = payload => {
   return dispatch => {
-    fetch(`http://localhost:3000/users/${payload.id}`, {
+    fetch(`http://localhost:3000/user/${payload.id}`, {
       method: 'PUT',
       body: JSON.stringify(payload),
       headers: {
@@ -58,13 +59,14 @@ export const editUser = payload => {
 
 export const deleteUser = payload => {
   return dispatch => {
-    fetch(`http://localhost:3000/users/${payload.id}`, {
-      method: 'PATCH',
+    fetch(`http://localhost:3000/user/${payload.id}`, {
+      method: 'PUT',
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json',
       },
     })
+      .then(() => console.log(`this is the payload ${payload.rol}`))
       .then(() => dispatch(desactiveUser(payload)))
       .catch(err => console.log(`Error en Actions ${err}`));
   };

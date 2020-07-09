@@ -16,11 +16,11 @@ const Table = props => {
   const handleActiveIcon = user => {
     const activeUser = {
       id: user.id,
-      idUser: user.idUser,
-      state: 'Active',
+      userStatus: true,
     };
     props.deleteUser(activeUser);
   };
+
   return (
     <div className="container">
       <table className="Table">
@@ -37,27 +37,33 @@ const Table = props => {
         <tbody>
           {data.userInformation.map(item => (
             <tr
-              key={item.idUser}
+              key={item.id}
               className={
-                item.state === 'Desactive'
+                item.data.userStatus === false
                   ? 'Table__desactiveRow'
                   : 'Table__row'
               }
             >
-              <td className="Table__cell cell_cedula">{item.cedulaId}</td>
-              <td className="Table__cell cell_name">{`${item.name} ${item.lastname}`}</td>
-              <td className="Table__cell cell_phone">{item.phone}</td>
-              <td className="Table__cell cell_email">{item.email}</td>
-              <td className="Table__cell cell_role">{item.role}</td>
-              <td className="Table__cell cell_state">{item.state}</td>
+              <td className="Table__cell cell_cedula">
+                {item.data.identityCard}
+              </td>
+              <td className="Table__cell cell_name">{`${item.data.name} ${item.data.lastName}`}</td>
+              <td className="Table__cell cell_phone">
+                {item.data.phoneNumber}
+              </td>
+              <td className="Table__cell cell_email">{item.data.email}</td>
+              <td className="Table__cell cell_role">{item.data.rol}</td>
+              <td className="Table__cell cell_state">
+                {item.data.userStatus === true ? 'Activo' : 'Inactivo'}
+              </td>
               <td className="Table__actions cell_actions">
                 <OpenModal
                   type="edit"
                   item={item}
-                  disable={item.state === 'Desactive' ? true : null}
+                  disable={item.data.userStatus === false ? true : null}
                   history={history}
                 />
-                {item.state === 'Active' ? (
+                {item.data.userStatus === true ? (
                   <OpenModal type="delete" item={item} />
                 ) : (
                   <span

@@ -43,6 +43,15 @@ const LoginForm = props => {
       phone: '90-45-67-88',
       userType: 'patient',
     },
+    {
+      id: 3,
+      email: 'bacteriologo@dominio.com',
+      name: 'Luis',
+      lastName: 'Lopez',
+      mobile: '12-34-56-78',
+      phone: '90-45-67-88',
+      userType: 'bacteriologist',
+    },
   ];
 
   const clearState = () => {
@@ -98,6 +107,8 @@ const LoginForm = props => {
         location.href = '/medical';
         break;
       case 'bacteriologist':
+        // eslint-disable-next-line no-undef
+        location.href = '/bacteriologist';
         break;
       case 'patient':
         // eslint-disable-next-line no-undef

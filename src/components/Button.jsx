@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/components/Button.styl';
 
 const Button = props => {
-  const { text, disabled, onClick, warningBtn, cancelBtn } = props;
+  const { text, disabled, onClick, warningBtn, cancelBtn, inputButton } = props;
 
   return (
     <button
@@ -12,7 +12,8 @@ const Button = props => {
         `}
       onClick={onClick}
       disabled={disabled}
-      type="button"
+      // eslint-disable-next-line react/button-has-type
+      type={inputButton ? 'input' : 'button'}
     >
       {text}
     </button>

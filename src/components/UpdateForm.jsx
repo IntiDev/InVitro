@@ -9,17 +9,17 @@ const UpdateForm = props => {
   const { item, isOpen, onCloseModal } = props;
 
   const [user, setUser] = useState({
+    /* id: item.data.id, */
     id: item.id,
-    idUser: item.idUser,
-    documentType: item.documentType,
-    cedulaId: item.cedulaId,
-    name: item.name,
-    lastname: item.lastname,
-    email: item.email,
-    phone: item.phone,
-    cellphone: item.cellphone,
-    state: item.state,
-    role: item.role,
+    documentType: item.data.documentType,
+    identityCard: item.data.identityCard,
+    name: item.data.name,
+    lastName: item.data.lastName,
+    email: item.data.email,
+    phoneNumber: item.data.phoneNumber,
+    numberContact: item.data.numberContact,
+    userStatus: item.data.userStatus,
+    rol: item.data.rol,
   });
 
   const handleUpdateUser = () => {
@@ -46,20 +46,20 @@ const UpdateForm = props => {
               <input
                 type="text"
                 name="documentType"
-                id="name"
+                id="documentType"
                 onChange={handleChange}
-                defaultValue={item.documentType}
+                defaultValue={item.data.documentType}
               />
             </label>
 
-            <label htmlFor="cedulaId">
+            <label htmlFor="identityCard">
               Documento
               <input
                 type="text"
-                name="cedulaId"
-                id="cedulaId"
+                name="identityCard"
+                id="identityCard"
                 onChange={handleChange}
-                defaultValue={item.cedulaId}
+                defaultValue={item.data.identityCard}
               />
             </label>
 
@@ -70,40 +70,40 @@ const UpdateForm = props => {
                 name="name"
                 id="name"
                 onChange={handleChange}
-                defaultValue={item.name}
+                defaultValue={item.data.name}
               />
             </label>
 
-            <label htmlFor="lastname">
+            <label htmlFor="lastName">
               Apellido
               <input
                 type="text"
-                name="lastname"
-                id="lastname"
+                name="lastName"
+                id="lastName"
                 onChange={handleChange}
-                defaultValue={item.lastname}
+                defaultValue={item.data.lastName}
               />
             </label>
 
-            <label htmlFor="cellphone">
+            <label htmlFor="numberContact">
               Celular
               <input
                 type="text"
-                name="cellphone"
-                id="cellphone"
+                name="numberContact"
+                id="numberContact"
                 onChange={handleChange}
-                defaultValue={item.cellphone}
+                defaultValue={item.data.numberContact}
               />
             </label>
 
-            <label htmlFor="phone">
+            <label htmlFor="phoneNumber">
               Tlf Fijo
               <input
                 type="text"
-                name="phone"
-                id="phone"
+                name="phoneNumber"
+                id="phoneNumber"
                 onChange={handleChange}
-                defaultValue={item.phone}
+                defaultValue={item.data.phoneNumber}
               />
             </label>
           </div>
@@ -115,14 +115,14 @@ const UpdateForm = props => {
               name="email"
               id="email"
               onChange={handleChange}
-              defaultValue={item.email}
+              defaultValue={item.data.email}
             />
           </label>
 
-          <label htmlFor="role">
+          <label htmlFor="rol">
             Tipo de Usuario
-            <select id="role" name="role" onChange={handleChange}>
-              <option value="none" selected disable hidden>
+            <select id="rol" name="rol" onChange={handleChange}>
+              <option value="none" selected disable="true" hidden>
                 {' '}
                 Selecciona un rol
               </option>

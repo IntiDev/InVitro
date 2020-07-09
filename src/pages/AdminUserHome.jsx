@@ -22,13 +22,16 @@ const AdminUserHome = props => {
       useFilter === 'Paciente' ||
       useFilter === 'Administrador'
     ) {
-      return users.filter(user => user.role === useFilter);
+      return users.filter(user => user.data.rol === useFilter);
     }
     if (useFilter === 'Usuarios') {
       return users;
     }
-    return users.filter(user =>
-      user.name.toLowerCase().includes(useFilter.toLowerCase())
+    return users.filter(
+      user =>
+        user.data.name.toLowerCase().includes(useFilter.toLowerCase()) ||
+        user.data.lastName.toLowerCase().includes(useFilter.toLowerCase()) ||
+        user.id.includes(useFilter)
     );
   };
 
@@ -59,7 +62,10 @@ const AdminUserHome = props => {
           </div>
         </div>
 
-        <Table users={filteredUsers(filterBy)} history={history} />
+        <Table
+          users /* {users} */={filteredUsers(filterBy)}
+          history={history}
+        />
       </div>
       <div>
         <Link to="/register">
