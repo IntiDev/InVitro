@@ -22,7 +22,7 @@ export const fetchAPI = () => {
   return dispatch => {
     fetch('http://localhost:3000/user')
       .then(response => response.json())
-      .then(data => dispatch(getListUsers(data)))
+      .then(data => dispatch(getListUsers(data.Users)))
       .then(() => console.log('Fetch'))
       .catch(err => console.log(`Error en Actions ${err}`));
   };

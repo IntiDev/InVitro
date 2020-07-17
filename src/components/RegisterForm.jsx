@@ -7,7 +7,7 @@ import '../styles/components/RegisterForm.styl';
 const RegisterForm = props => {
   const [user, setUser] = useState({
     documentType: '',
-    identityCard: '',
+    identityNumber: '',
     name: '',
     lastName: '',
     email: '',
@@ -38,7 +38,7 @@ const RegisterForm = props => {
         account_circle
       </span>
       <h1 className="registerCard__title">Datos del usuario</h1>
-      <form className="registerCard__form" action="">
+      <form className="registerCard__form" onSubmit={handleAddUser}>
         <div className="registerCard__form__section">
           {/* <label htmlFor="documentType">
             Tipo de Documento
@@ -71,12 +71,12 @@ const RegisterForm = props => {
             </select>
           </label>
 
-          <label htmlFor="identityCard">
+          <label htmlFor="identityNumber">
             Documento
             <input
-              type="text"
-              name="identityCard"
-              id="identityCard"
+              type="number"
+              name="identityNumber"
+              id="identityNumber"
               onChange={handleChange}
               required
             />
@@ -107,7 +107,7 @@ const RegisterForm = props => {
           <label htmlFor="numberContact">
             Celular
             <input
-              type="text"
+              type="number"
               name="numberContact"
               id="numberContact"
               onChange={handleChange}
@@ -117,7 +117,7 @@ const RegisterForm = props => {
           <label htmlFor="phoneNumber">
             Tlf Fijo
             <input
-              type="text"
+              type="number"
               name="phoneNumber"
               id="phoneNumber"
               onChange={handleChange}
@@ -128,7 +128,7 @@ const RegisterForm = props => {
         <label htmlFor="email">
           Correo
           <input
-            type="mail"
+            type="email"
             name="email"
             id="email"
             onChange={handleChange}
@@ -137,13 +137,9 @@ const RegisterForm = props => {
         </label>
 
         <label htmlFor="rol">
-          {' '}
           Tipo de Usuario
           <select id="rol" name="rol" onChange={handleChange} required>
-            <option value="none" selected disable="true" hidden>
-              {' '}
-              Selecciona un rol
-            </option>
+            <option value="">Selecciona un rol</option>
             <option value="Paciente">Paciente</option>
             <option value="Medico">Médico</option>
             <option value="Administrador">Administrador</option>
@@ -151,7 +147,7 @@ const RegisterForm = props => {
         </label>
 
         <div>
-          <Button onClick={handleAddUser} inputButton text="Crear" />
+          <Button /* onClick={handleAddUser} */ inputButton text="Crear" />
         </div>
       </form>
     </div>

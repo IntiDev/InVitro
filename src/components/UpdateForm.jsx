@@ -9,17 +9,17 @@ const UpdateForm = props => {
   const { item, isOpen, onCloseModal } = props;
 
   const [user, setUser] = useState({
-    /* id: item.data.id, */
+    /* id: item.UserData.id, */
     id: item.id,
-    documentType: item.data.documentType,
-    identityCard: item.data.identityCard,
-    name: item.data.name,
-    lastName: item.data.lastName,
-    email: item.data.email,
-    phoneNumber: item.data.phoneNumber,
-    numberContact: item.data.numberContact,
-    userStatus: item.data.userStatus,
-    rol: item.data.rol,
+    documentType: item.UserData.documentType,
+    identityNumber: item.UserData.identityNumber,
+    name: item.UserData.name,
+    lastName: item.UserData.lastName,
+    email: item.UserData.email,
+    phoneNumber: item.UserData.phoneNumber,
+    numberContact: item.UserData.numberContact,
+    userStatus: item.UserData.userStatus,
+    rol: item.UserData.rol,
   });
 
   const handleUpdateUser = () => {
@@ -48,18 +48,18 @@ const UpdateForm = props => {
                 name="documentType"
                 id="documentType"
                 onChange={handleChange}
-                defaultValue={item.data.documentType}
+                defaultValue={item.UserData.documentType}
               />
             </label>
 
-            <label htmlFor="identityCard">
+            <label htmlFor="identityNumber">
               Documento
               <input
                 type="text"
-                name="identityCard"
-                id="identityCard"
+                name="identityNumber"
+                id="identityNumber"
                 onChange={handleChange}
-                defaultValue={item.data.identityCard}
+                defaultValue={item.UserData.identityNumber}
               />
             </label>
 
@@ -70,7 +70,7 @@ const UpdateForm = props => {
                 name="name"
                 id="name"
                 onChange={handleChange}
-                defaultValue={item.data.name}
+                defaultValue={item.UserData.name}
               />
             </label>
 
@@ -81,7 +81,7 @@ const UpdateForm = props => {
                 name="lastName"
                 id="lastName"
                 onChange={handleChange}
-                defaultValue={item.data.lastName}
+                defaultValue={item.UserData.lastName}
               />
             </label>
 
@@ -92,7 +92,7 @@ const UpdateForm = props => {
                 name="numberContact"
                 id="numberContact"
                 onChange={handleChange}
-                defaultValue={item.data.numberContact}
+                defaultValue={item.UserData.numberContact}
               />
             </label>
 
@@ -103,7 +103,7 @@ const UpdateForm = props => {
                 name="phoneNumber"
                 id="phoneNumber"
                 onChange={handleChange}
-                defaultValue={item.data.phoneNumber}
+                defaultValue={item.UserData.phoneNumber}
               />
             </label>
           </div>
@@ -115,7 +115,7 @@ const UpdateForm = props => {
               name="email"
               id="email"
               onChange={handleChange}
-              defaultValue={item.data.email}
+              defaultValue={item.UserData.email}
             />
           </label>
 
