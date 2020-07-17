@@ -23,7 +23,7 @@ const OpenModal = ({ type, item, history }) => {
       <>
         <span
           className={`material-icons ${
-            item.data.userStatus === false ? 'disableIcon' : ''
+            item.UserData.userStatus === false ? 'disableIcon' : ''
           }`}
           onClick={() => handleOpenModal()}
           role="button"
@@ -57,7 +57,7 @@ const OpenModal = ({ type, item, history }) => {
         onClick={() => handleOpenModal()}
         role="button"
       >
-        {item.data.userStatus === false ? 'check_circle' : 'delete'}
+        {item.UserData.userStatus === false ? 'check_circle' : 'delete'}
       </span>
 
       <ConfirmationModal

@@ -22,15 +22,17 @@ const AdminUserHome = props => {
       useFilter === 'Paciente' ||
       useFilter === 'Administrador'
     ) {
-      return users.filter(user => user.data.rol === useFilter);
+      return users.filter(user => user.UserData.rol === useFilter);
     }
     if (useFilter === 'Usuarios') {
       return users;
     }
     return users.filter(
       user =>
-        user.data.name.toLowerCase().includes(useFilter.toLowerCase()) ||
-        user.data.lastName.toLowerCase().includes(useFilter.toLowerCase()) ||
+        user.UserData.name.toLowerCase().includes(useFilter.toLowerCase()) ||
+        user.UserData.lastName
+          .toLowerCase()
+          .includes(useFilter.toLowerCase()) ||
         user.id.includes(useFilter)
     );
   };

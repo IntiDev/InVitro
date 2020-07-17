@@ -13,7 +13,7 @@ const Button = props => {
       onClick={onClick}
       disabled={disabled}
       // eslint-disable-next-line react/button-has-type
-      type={inputButton ? 'input' : 'button'}
+      type={inputButton ? 'submit' : 'button'}
     >
       {text}
     </button>

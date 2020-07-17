@@ -1,10 +1,10 @@
 const reducer = (state, actions) => {
   switch (actions.type) {
     case 'LIST_USERS': {
-      console.log(actions.payload.data);
+      console.log(actions.payload);
       return {
         ...state,
-        users: actions.payload.data,
+        users: actions.payload,
       };
     }
     case 'ADD_USER':
@@ -12,7 +12,7 @@ const reducer = (state, actions) => {
         ...state,
         users: [
           ...state.users,
-          { id: actions.payload.identityCard, data: actions.payload },
+          { id: actions.payload.identityNumber, UserData: actions.payload },
         ],
       };
 
@@ -20,8 +20,8 @@ const reducer = (state, actions) => {
       return {
         ...state,
         users: state.users.map(item =>
-          item.id === actions.payload.identityCard
-            ? { ...item, data: actions.payload }
+          item.id === actions.payload.identityNumber
+            ? { ...item, UserData: actions.payload }
             : item
         ),
       };
@@ -35,8 +35,8 @@ const reducer = (state, actions) => {
           item.id === actions.payload.id
             ? {
                 ...item,
-                data: {
-                  ...item.data,
+                UserData: {
+                  ...item.UserData,
                   userStatus: actions.payload.userStatus,
                 } /* state: 'Desactive' */,
               }

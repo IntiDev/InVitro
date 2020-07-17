@@ -39,31 +39,31 @@ const Table = props => {
             <tr
               key={item.id}
               className={
-                item.data.userStatus === false
+                item.UserData.userStatus === false
                   ? 'Table__desactiveRow'
                   : 'Table__row'
               }
             >
               <td className="Table__cell cell_cedula">
-                {item.data.identityCard}
+                {item.UserData.identityNumber}
               </td>
-              <td className="Table__cell cell_name">{`${item.data.name} ${item.data.lastName}`}</td>
+              <td className="Table__cell cell_name">{`${item.UserData.name} ${item.UserData.lastName}`}</td>
               <td className="Table__cell cell_phone">
-                {item.data.phoneNumber}
+                {item.UserData.phoneNumber}
               </td>
-              <td className="Table__cell cell_email">{item.data.email}</td>
-              <td className="Table__cell cell_role">{item.data.rol}</td>
+              <td className="Table__cell cell_email">{item.UserData.email}</td>
+              <td className="Table__cell cell_role">{item.UserData.rol}</td>
               <td className="Table__cell cell_state">
-                {item.data.userStatus === true ? 'Activo' : 'Inactivo'}
+                {item.UserData.userStatus === true ? 'Activo' : 'Inactivo'}
               </td>
               <td className="Table__actions cell_actions">
                 <OpenModal
                   type="edit"
                   item={item}
-                  disable={item.data.userStatus === false ? true : null}
+                  disable={item.UserData.userStatus === false ? true : null}
                   history={history}
                 />
-                {item.data.userStatus === true ? (
+                {item.UserData.userStatus === true ? (
                   <OpenModal type="delete" item={item} />
                 ) : (
                   <span

@@ -78,7 +78,9 @@ const MedicalHistoryForm = props => {
       {/* <button className="medicalHistoryForm__submitBtn Button" type="submit">
         Actualizar Datos
       </button> */}
-
+      <div className="medicalHistoryForm__examButton">
+        {buttonVisible ? <Button text="Ver Examenes" /> : ''}
+      </div>
       {buttonVisible ? <Button text="Actualizar datos" /> : ''}
     </div>
   );
