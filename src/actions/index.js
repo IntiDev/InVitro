@@ -43,6 +43,20 @@ export const registerUser = payload => {
   };
 };
 
+/* export const addMassiveUsers = payload => {
+  const formData = new FormData();
+  formData.append('usersCSV', payload);
+  return dispatch => {
+    fetch('http://localhost:3000/uploadCSV', {
+      method: 'POST',
+      body: formData,
+      
+    })
+      .then(console.log(payload))
+      .catch(err => console.log(`Error en Actions ${err}`));
+  };
+}; */
+
 export const editUser = payload => {
   return dispatch => {
     fetch(`http://localhost:3000/user/${payload.id}`, {
