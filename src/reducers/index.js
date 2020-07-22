@@ -5,6 +5,7 @@ const reducer = (state, actions) => {
       return {
         ...state,
         users: actions.payload,
+        showComponent: true,
       };
     }
     case 'ADD_USER':

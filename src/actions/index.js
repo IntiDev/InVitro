@@ -28,6 +28,16 @@ export const fetchAPI = () => {
   };
 };
 
+export const searchUser = payload => {
+  return dispatch => {
+    fetch(`http://localhost:3000/user/${payload}`)
+      .then(response => response.json())
+      .then(data => dispatch(getListUsers(data.User[0])))
+      .then(() => console.log('Fetch un usuario'))
+      .catch(err => console.log(`Error en Actions ${err}`));
+  };
+};
+
 export const registerUser = payload => {
   return dispatch => {
     fetch('http://localhost:3000/user', {
