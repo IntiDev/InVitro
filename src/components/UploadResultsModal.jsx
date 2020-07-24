@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { changeExam } from '../actions';
 import Modal from './Modal';
 import Button from './Button';
+import '../styles/components/UploadCsvModal.styl';
 
 const UploadCsvModal = props => {
   const { isOpen, onCloseModal, exam, user } = props;
@@ -30,34 +31,33 @@ const UploadCsvModal = props => {
     }
   };
 
-  /*  const reload = () => {
-     setDisplay(false);
-    onCloseModal(); 
-    
-  }; */
+  const reload = () => {
+    setDisplay(false);
+    onCloseModal();
+    props.changeExam(exam);
+  };
 
   return (
     <Modal isOpen={isOpen} onCloseModal={onCloseModal}>
       {display === false ? (
-        <form onSubmit={uploadResults}>
-          <h1>Introduce el archivo CSV aqui:</h1>
-          <input
-            type="file"
-            name="resultsPdf"
-            id="resultsPdf"
-            onChange={handleChange}
-            required
-          />
-          <Button inputButton text="Cargar Resultados" />
-        </form>
+        <div className="csvUpload__container">
+          <form onSubmit={uploadResults}>
+            <h1>Introduce el archivo CSV aqui:</h1>
+            <input
+              type="file"
+              name="resultsPdf"
+              id="resultsPdf"
+              onChange={handleChange}
+              required
+            />
+            <Button inputButton text="Cargar Resultados" />
+          </form>
+        </div>
       ) : (
-        <div>
-          No aparece nada
-          <Button
-            inputButton
-            text="Probando"
-            onClick={() => changeExam(exam)}
-          />
+        <div className="infoModal__container">
+          <span className="material-icons">check_circle</span>
+          <p>Los resultados fueron cargados exitosamente</p>
+          <Button inputButton text="Aceptar" onClick={reload} />
         </div>
       )}
     </Modal>

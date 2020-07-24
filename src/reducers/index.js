@@ -47,10 +47,23 @@ const reducer = (state, actions) => {
     }
 
     case 'CHANGE_EXAM': {
-      /* console.log(actions.payload) */
+      console.log(state);
       return {
         ...state,
-        Exams: [],
+        users: {
+          ...state.users,
+          Exams: state.users.Exams.map(item =>
+            item.examId === actions.payload
+              ? {
+                  ...item,
+                  exam: {
+                    ...item.exam,
+                    status: true,
+                  },
+                }
+              : item
+          ),
+        },
       };
     }
 
