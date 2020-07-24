@@ -6,6 +6,7 @@ import Table from '../components/Table';
 import '../styles/pages/AdminUserHome.styl';
 import Button from '../components/Button';
 import { fetchAPI } from '../actions';
+import UploadCsvModal from '../components/UploadCsvModal';
 
 const AdminUserHome = props => {
   const { users, history } = props;
@@ -15,6 +16,7 @@ const AdminUserHome = props => {
   }, []);
 
   const [filterBy, setFilter] = useState('Usuarios');
+  const [modal, setModal] = useState('false');
 
   const filteredUsers = useFilter => {
     if (
@@ -45,6 +47,11 @@ const AdminUserHome = props => {
     setFilter(e.target.value);
   };
 
+  const handleModal = () => {
+    if (modal === 'false') setModal('true');
+    else setModal('false');
+  };
+
   return (
     <div className="userHome">
       <SideMenu useFilter={filterSelected} />
@@ -58,22 +65,23 @@ const AdminUserHome = props => {
             <Link className="Boton" to="/register">
               <Button className="button" text="Nuevo Usuario" />
             </Link>
-            <Link className="Boton" to="/adminUser">
-              <Button text="Cargar CSV " disabled />
-            </Link>
+
+            <Button text="Cargar CSV " onClick={handleModal} />
           </div>
         </div>
 
-        <Table
-          users /* {users} */={filteredUsers(filterBy)}
-          history={history}
-        />
+        <Table users={filteredUsers(filterBy)} history={history} />
       </div>
       <div>
         <Link to="/register">
           <span className="material-icons addUser">add_circle</span>
         </Link>
       </div>
+      <UploadCsvModal
+        isOpen={modal}
+        onCloseModal={handleModal}
+        history={history}
+      />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Button from './Button';
 import '../styles/components/SearchBox.styl';
 
 const SearchBox = props => {
-  const { userCc, handleChange, handleClick } = props;
+  const { /* userCc, */ handleChange, handleClick } = props;
   return (
     <div className="Search__container">
       <h2> Buscar Paciente</h2>
@@ -14,7 +14,7 @@ const SearchBox = props => {
         <input
           type="text"
           name="userCc"
-          value={userCc}
+          /* value={userCc} */
           className="Search__input"
           placeholder="12345"
           onChange={handleChange}

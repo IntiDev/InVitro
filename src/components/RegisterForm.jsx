@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions';
 import Button from './Button';
+import passwordGen from '../utils/passwordGen';
 import '../styles/components/RegisterForm.styl';
 
 const RegisterForm = props => {
@@ -10,6 +11,7 @@ const RegisterForm = props => {
     identityNumber: '',
     name: '',
     lastName: '',
+    password: passwordGen(),
     email: '',
     phoneNumber: '',
     numberContact: '',

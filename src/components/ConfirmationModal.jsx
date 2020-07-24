@@ -16,7 +16,6 @@ const ConfirmationModal = props => {
 
   const handleButton = () => {
     props.deleteUser(desactiveUser);
-    console.log('entro al boton');
     onCloseModal();
   };
 
