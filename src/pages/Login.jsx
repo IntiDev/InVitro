@@ -10,7 +10,7 @@ const Login = () => {
         <section className="Login__info">
           <img
             className="Login__logo"
-            src="http://resource.intidev.info/InVitro/logo.png"
+            src="http://intidev.videliapps.com/resource.intidev.info/InVitro/logo.png"
             alt="Logo"
           />
           <div className="Login__text">
