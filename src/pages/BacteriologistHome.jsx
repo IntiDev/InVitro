@@ -57,7 +57,6 @@ const BacteriologistHome = props => {
 
   const handleChange = e => {
     setState(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleClick = () => {
@@ -69,7 +68,6 @@ const BacteriologistHome = props => {
          window.alert('No hay tal usuario');
        } */
   };
-  console.log(user);
   return (
     <div className="bactContainer">
       <div className="bactCardContainer">

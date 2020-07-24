@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchAPI } from '../actions';
+import { changeExam } from '../actions';
 import Modal from './Modal';
 import Button from './Button';
 
@@ -19,20 +19,22 @@ const UploadCsvModal = props => {
     formData.append('results', file);
     formData.append('examId', exam);
     try {
-      await fetch(`http://localhost:3000/result/${user.id}`, {
+      await fetch(`https://invitro-api.herokuapp.com/result/${user.id}`, {
         method: 'POST',
         body: formData,
       });
+
       setDisplay(true);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const reload = () => {
-    setDisplay(false);
-    onCloseModal();
-  };
+  /*  const reload = () => {
+     setDisplay(false);
+    onCloseModal(); 
+    
+  }; */
 
   return (
     <Modal isOpen={isOpen} onCloseModal={onCloseModal}>
@@ -51,7 +53,11 @@ const UploadCsvModal = props => {
       ) : (
         <div>
           No aparece nada
-          <Button inputButton text="Probando" onClick={reload} />
+          <Button
+            inputButton
+            text="Probando"
+            onClick={() => changeExam(exam)}
+          />
         </div>
       )}
     </Modal>
@@ -59,7 +65,7 @@ const UploadCsvModal = props => {
 };
 
 const mapDispatchToProps = {
-  fetchAPI,
+  changeExam,
 };
 
 export default connect(null, mapDispatchToProps)(UploadCsvModal);

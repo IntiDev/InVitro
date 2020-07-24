@@ -18,7 +18,7 @@ const UploadCsvModal = props => {
     const formData = new FormData();
     formData.append('usersCSV', file);
     try {
-      await fetch('http://localhost:3000/uploadCSV', {
+      await fetch('https://invitro-api.herokuapp.com/uploadCSV', {
         method: 'POST',
         body: formData,
       });

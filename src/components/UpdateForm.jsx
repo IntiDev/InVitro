@@ -24,7 +24,6 @@ const UpdateForm = props => {
 
   const handleUpdateUser = () => {
     props.editUser(user);
-    console.log(user);
     onCloseModal();
   };
 
