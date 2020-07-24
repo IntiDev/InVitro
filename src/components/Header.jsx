@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="Header">
       <img
-        src="http://resource.intidev.info/InVitro/logo.png"
+        src="http://intidev.videliapps.com/resource.intidev.info/InVitro/logo.png"
         alt="Logo"
         className="Header__logo"
       />

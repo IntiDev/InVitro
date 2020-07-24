@@ -77,7 +77,13 @@ const BacteriologistHome = props => {
           handleClick={handleClick}
         ></SearchBox>
         <hr />
-        <ExamsTable user={user} show={showComponent}></ExamsTable>
+        {user !== undefined ? (
+          <ExamsTable user={user} show={showComponent}></ExamsTable>
+        ) : (
+          <div className="bactCardContainer__alert">
+            Este usuario no existe. Intenta nuevamente
+          </div>
+        )}
       </div>
     </div>
   );

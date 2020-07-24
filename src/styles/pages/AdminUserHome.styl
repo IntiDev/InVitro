@@ -16,7 +16,7 @@
     display: flex
     justify-content: space-between
 
-    div
+    &__buttons
       display: grid
       grid-template-columns: 1fr 1fr
       grid-column-gap: 10px
@@ -32,7 +32,10 @@
 
   .addUser
     display: none
-        
+
+  &__mobileButtons
+    display: flex
+    /* grid-template-columns: 1fr 1fr    */     
 
 @media screen and (max-width: 1250px)
 
@@ -49,14 +52,15 @@
 
 @media (max-width: 720px)
   .userHome
+
     .addUser
         display: block
         color: orange
         font-size: 48px
         margin: 10px
-    &__tableActions
-      .Boton
-        display: none
+
+    &__tableActions__buttons
+      display: none
 
 
 

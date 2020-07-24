@@ -122,6 +122,11 @@ const LoginForm = props => {
 
   return (
     <div className="LoginForm">
+      <img
+        className="LoginForm__logo"
+        src="http://intidev.videliapps.com/resource.intidev.info/InVitro/logo.png"
+        alt="Logo"
+      />
       <p className="LoginForm__title">{title}</p>
       <input
         type="email"

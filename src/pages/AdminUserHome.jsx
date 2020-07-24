@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -61,21 +63,25 @@ const AdminUserHome = props => {
             <h2> Usuarios </h2>
             <input type="text" placeholder="Filter" onChange={handleChange} />
           </div>
-          <div>
+          <div className="userHome__tableActions__buttons">
             <Link className="Boton" to="/register">
               <Button className="button" text="Nuevo Usuario" />
             </Link>
-
             <Button text="Cargar CSV " onClick={handleModal} />
           </div>
         </div>
 
         <Table users={filteredUsers(filterBy)} history={history} />
       </div>
-      <div>
+      <div className="userHome__mobileButtons">
         <Link to="/register">
           <span className="material-icons addUser">add_circle</span>
         </Link>
+        <div>
+          <span className="material-icons addUser" onClick={handleModal}>
+            supervised_user_circle
+          </span>
+        </div>
       </div>
       <UploadCsvModal
         isOpen={modal}

@@ -49,7 +49,7 @@ const Table = props => {
               </td>
               <td className="Table__cell cell_name">{`${item.UserData.name} ${item.UserData.lastName}`}</td>
               <td className="Table__cell cell_phone">
-                {item.UserData.phoneNumber}
+                {item.UserData.numberContact}
               </td>
               <td className="Table__cell cell_email">{item.UserData.email}</td>
               <td className="Table__cell cell_role">{item.UserData.rol}</td>
